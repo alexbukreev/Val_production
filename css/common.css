@@ -77,6 +77,9 @@ a:visited .fc_dark {
 a:hover .fc_dark {
 	color: #000;
 }
+.visible-block {
+	display: block !important;
+}
 /* -----------------------
 /* btn
 /* -----------------------*/
@@ -302,7 +305,6 @@ fieldset[disabled] .btn-buy.focus {
 	margin-top: -10px;
 }
 .navbar-top__burger {
-	position: fixed;
 	display: none;
   	margin: 10px 0 0 10px;
 	font-size: 2rem;
@@ -310,10 +312,10 @@ fieldset[disabled] .btn-buy.focus {
 	cursor: pointer;
 	color: #9e9e9e;
 }
-input[name="navbar-top__burger"] {
+input[name="navbar-top__checkbox"] {
 	display: none;
 }
-/* label[name="navbar-top__burger"] {
+/* label[name="navbar-top__checkbox"] {
 	cursor: pointer !important;
 } */
 .glyphicon-menu-hamburger {
@@ -322,25 +324,31 @@ input[name="navbar-top__burger"] {
 .navbar-top__burger:hover {
 	color: #000;
 }
-input#navbar-top__burger:checked ~ nav[class="navbar-top"] {
-	height: 300px;
+input#navbar-top__checkbox:checked ~ nav[class="navbar-top"] {
+	height: 310px;
 }
 /* -----------------------
 /* нижняя навигация
 /* ----------------------- */
-input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom {
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
+	position: fixed;
 	display: flex; /* обратить внимание на старые версии браузеров */
-	flex-direction: column;
+	flex-direction: column;/* обратить внимание на старые версии браузеров */
 	margin-top: 10px;
+	text-align: left;
 }
-input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom li {
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	display: inline-block;
-	margin: 10px 10px 0 12px;
+	margin: 10px 0 0 12px;
 }
-.navbar-top__bottom {
-	justify-content: center;
+input#navbar-top__checkbox:checked ~ .navbar-top__compens {
+	height: 100px;
+}
+.navbar-top__bottom { 
+	text-align: center;
 	padding: 0;
 	margin: 0;
+	height: 100px;
 }
 .navbar-top__bottom li {
 	display: inline-block;
@@ -355,12 +363,17 @@ input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom l
 .navbar-top__bottom a:hover {
 	color: #0288d1;
 }
+/*
+.navbar-top__compens { /* компенсируем смещение при выпадающем меню */
+
+/* допослительный стиль для того, чтобы меню исчезало при прокрутке */
+
 /* -----------------------------------
 /*
 /* адаптация
 /*
 /* ----------------------------------- */
-@media (max-width: 979px) {
+@media (max-width: 1029px) {
 	.navbar-top__small {
 		font-size: 0.5em;
 	}
@@ -372,11 +385,12 @@ input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom l
 		margin: 10px 0 0 0;
 	  	font-size: 1.2rem;
 	}
+	/*
 	.navbar-top__bottom li {
 		margin: 24px 10px 0 10px;
-	}
+	*/
 }
-@media (max-width: 889px) {
+@media (max-width: 949px) {
 	.navbar-top__info {
 		position: fixed;
 		top: 55px;
@@ -390,9 +404,14 @@ input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom l
 		display: inline-block;
 	}
 }
-@media (max-width: 759px) {
+@media (max-width: 799px) {
+	/*
 	.navbar-top__brand {
-	  	margin: 11px 10px 0 70px;
+	  	margin: 11px 10px 0 20px;
+	}
+	*/
+	input#navbar-top__checkbox:checked ~ .navbar-top__compens {
+		height: 0px;
 	}
 	.navbar-top__burger {
 		display: block;
@@ -408,6 +427,9 @@ input#navbar-top__burger:checked ~ nav[class="navbar-top"] .navbar-top__bottom l
 	}
 	.navbar-top__bottom {
 		display: none;
+	}
+	.navbar-top__compens {
+		height: 0px;
 	}
 }
 @media (max-width: 609px) {
