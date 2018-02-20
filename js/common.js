@@ -1,17 +1,18 @@
+// developer: Alexander Bukreev, 2018
+// e-mail: alexander.v.bukreev@gmail.com
+
 // Прокрутка окна
-window.onscroll = function() {hideTopSubMunu()};
+window.onscroll = function() {hideTopSubMunu(35, 'navbar-top__burger', 'navbar-top__checkbox', 'visible-block')};
 
 // прячем меню в бургер при прокрутке вверх
-function hideTopSubMunu() {
-	var navbarTopBurger = document.getElementById('navbar-top__burger');
-	var navbarTopChekcbox = document.getElementById('navbar-top__checkbox');
-	var visibleBlock = 'visible-block';
+function hideTopSubMunu(margingTop, id1, id2, visibleClass) {
+	var navbarTopBurger = document.getElementById(id1);
+	var navbarTopChekcbox = document.getElementById(id2);
 	// показываем и скрываем бургер
-    if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
-        navbarTopBurger.classList.add(visibleBlock);
+    if (document.body.scrollTop > margingTop || document.documentElement.scrollTop > margingTop) {
+        navbarTopBurger.classList.add(visibleClass);
     } else {
-        //document.getElementById("myP").className = "";
-        navbarTopBurger.classList.remove(visibleBlock);
+        navbarTopBurger.classList.remove(visibleClass);
         navbarTopChekcbox.checked = false;
     }
 }

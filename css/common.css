@@ -11,6 +11,7 @@ border-bottom-left-radius: 0;
 */
 
 @import url(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp; subset=cyrillic");
+@import url('https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic');
 html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -55,6 +56,9 @@ a:visited {
 a:hover {
 	color: #0288d1;
   	text-decoration: underline;
+}
+.valunovTitle {
+	font-family: 'Lobster', cursive;
 }
 .fw-bolder {
 	font-weight: 700;
@@ -324,31 +328,29 @@ input[name="navbar-top__checkbox"] {
 .navbar-top__burger:hover {
 	color: #000;
 }
-input#navbar-top__checkbox:checked ~ nav[class="navbar-top"] {
-	height: 310px;
+/* выпадающее меню */
+input#navbar-top__checkbox:checked ~ #navbar-top {
+	height: 110px;
 }
 /* -----------------------
 /* нижняя навигация
 /* ----------------------- */
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 	position: fixed;
-	display: flex; /* обратить внимание на старые версии браузеров */
-	flex-direction: column;/* обратить внимание на старые версии браузеров */
+	display: block;
+	width: 100%;
 	margin-top: 10px;
-	text-align: left;
 }
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
-	display: inline-block;
-	margin: 10px 0 0 12px;
+	margin-top: 10px;
 }
-input#navbar-top__checkbox:checked ~ .navbar-top__compens {
-	height: 100px;
+.navbar-top__compens {
+	height: 80px;
 }
 .navbar-top__bottom { 
 	text-align: center;
 	padding: 0;
 	margin: 0;
-	height: 100px;
 }
 .navbar-top__bottom li {
 	display: inline-block;
@@ -391,10 +393,32 @@ input#navbar-top__checkbox:checked ~ .navbar-top__compens {
 	*/
 }
 @media (max-width: 949px) {
-	.navbar-top__info {
+	/* выпадающее меню */
+	input#navbar-top__checkbox:checked ~ #navbar-top {
+		height: 310px;
+	}
+	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 		position: fixed;
-		top: 55px;
+		display: flex; /* обратить внимание на старые версии браузеров */
+		flex-direction: column;/* обратить внимание на старые версии браузеров */
+		margin-top: 10px;
+		text-align: left;
+	}
+	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
+		margin: 10px 0 0 12px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		position: fixed;
+		display: flex; /* обратить внимание на старые версии браузеров */
+		flex-direction: column; /* обратить внимание на старые версии браузеров */
+		text-align: left;
+		top: 57px;
 		right: 0px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {
+		margin-bottom: 10px;
+	}
+	.navbar-top__info {
 		display: none;
 	}
 	.navbar-top__btn {
@@ -405,14 +429,15 @@ input#navbar-top__checkbox:checked ~ .navbar-top__compens {
 	}
 }
 @media (max-width: 799px) {
-	/*
-	.navbar-top__brand {
-	  	margin: 11px 10px 0 20px;
+	/* телефон
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		display: block;
+		margin-bottom: 10px;
 	}
 	*/
-	input#navbar-top__checkbox:checked ~ .navbar-top__compens {
-		height: 0px;
-	}
+
+
+
 	.navbar-top__burger {
 		display: block;
 	}
@@ -429,7 +454,7 @@ input#navbar-top__checkbox:checked ~ .navbar-top__compens {
 		display: none;
 	}
 	.navbar-top__compens {
-		height: 0px;
+		height: 20px;
 	}
 }
 @media (max-width: 609px) {
@@ -453,6 +478,9 @@ input#navbar-top__checkbox:checked ~ .navbar-top__compens {
 @media (max-width: 419px) {
 	.navbar-top__btn::after {
 		content: "Выбрать"
+	}
+	.navbar-top__compens {
+		height: 10px;
 	}
 }
 @media (max-width: 359px) {
@@ -495,9 +523,11 @@ input#navbar-top__checkbox:checked ~ .navbar-top__compens {
 .glyphicon-menu-hamburger:before {
   content: "\e236";
 }
+/*
 .glyphicon-envelope:before {
   content: "\2709";
 }
+*/
 .glyphicon-shopping-cart:before {
   content: "\e116";
 }
