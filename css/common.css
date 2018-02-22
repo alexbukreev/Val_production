@@ -418,6 +418,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {
 		margin-bottom: 10px;
 	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		margin: 5px 0 0 0;
+	  	font-size: 1.6rem;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special {
+		display: none;
+	}
 	.navbar-top__info {
 		display: none;
 	}
@@ -429,15 +436,17 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	}
 }
 @media (max-width: 799px) {
-	/* телефон
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		position: fixed;
 		display: block;
-		margin-bottom: 10px;
+		margin: 0;
+	  	font-size: 1.2rem;
+	  	top: 65px;
+		right: 25px;
 	}
-	*/
-
-
-
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		top: 90px;
+	}
 	.navbar-top__burger {
 		display: block;
 	}
@@ -461,19 +470,6 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	.navbar-top__special {
 		display: none;
 	}
-	/*
-	.navbar-top__info {
-		position: fixed;
-		top: 55px;
-		left: 0px;
-		margin-left: 68px;
-	} 
-	.navbar-top__info li {
-		display: block;
-		text-align: left;
-		margin-left: 0;
-		padding-bottom: 10px;
-	}*/
 }
 @media (max-width: 419px) {
 	.navbar-top__btn::after {
@@ -484,6 +480,40 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	}
 }
 @media (max-width: 359px) {
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__phone {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 75px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__send {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 125px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 178px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart__badge {
+		position: fixed;
+		display: block;
+		right: 7px;
+		top: 175px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		display: none;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		display: none;
+	}
 	.navbar-top__btn::after {
 		content: "";
 	}
