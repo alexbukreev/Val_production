@@ -1,0 +1,39 @@
+/*
+developer: Alexander Bukreev, 2018
+e-mail: alexander.v.bukreev@gmail.com
+*/
+.footer_questions { /* Секция вопросов в конце страниц */
+	padding: 25px 0 100px 0;
+}
+.footer_info {
+  	background-color: #000;
+  	padding-top: 25pt;
+  	padding-bottom: 15pt;
+}
+.footer_share {
+	margin: 5px 0 25px 0;
+}
+.footer_copy {
+	margin: 50px 0 10px 0;
+}
+.footer__social-btn {
+	display: inline-block;
+	cursor: pointer;
+	margin: 0;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	font-size: 25px;
+	line-height:1.6;
+	border-radius: 21px;
+	text-align: center;
+}
+@media (max-width: 359px) {
+	.footer__social-btn {
+		width: 25px;
+		height: 25px;
+		font-size: 15px;
+		line-height:1.6;
+		border-radius: 21px;
+	}
+}

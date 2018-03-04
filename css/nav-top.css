@@ -1,0 +1,311 @@
+/*
+developer: Alexander Bukreev, 2018
+e-mail: alexander.v.bukreev@gmail.com
+*/
+/* css for nav-top */
+.navbar-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 53px;
+	background-color: #fff;
+	box-shadow: 0 1px 2px #bdbdbd;
+	z-index: 10000;
+}
+.navbar-top a:link,
+.navbar-top a:active,
+.navbar-top a:visited {
+	color: #757575;
+	text-decoration: none;
+}
+.navbar-top a:hover {
+	color: #000;
+}
+.navbar-top__brand {
+	padding: 0;
+  	margin: 7px 10px 0 21px;
+  	font-size: 1.6em;
+  	line-height:0.8;
+  	/*background-color: grey;*/
+}
+.navbar-top_small {
+		font-size: 0.6em;
+	}
+.navbar-top__phone {
+	padding: 0;
+  	margin: 5px 0 0 0;
+  	font-size: 1.6em;
+  	text-align: center;
+  	flex-grow: 2; /* адаптиролвать под старые браузеры */
+}
+.navbar-top__info {
+	padding: 0;
+  	margin: 16px 10px 0 0;
+  	font-size: 0.8em;
+  	text-align: right;
+}
+.navbar-top__info li {
+	display: inline-block;
+	margin: 0 10px 0 10px;
+}
+.navbar-top__special {
+	display: none;
+	margin: 11px 30px -10px 0;
+	font-size: 1.4em;
+  	text-align: right;
+}
+.navbar-top__special span[class="glyphicon glyphicon-earphone fc_dark"] {
+	display: none;
+}
+.navbar-top__badge-special {
+	position: relative;
+	font-size: 0.6em !important;
+	top: -15px;
+	right: 18px;
+	margin-right: -10px;
+}
+.navbar-top__badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 4px 4px 3px 5px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #F07075;
+  border-radius: 20px;
+}
+.navbar-top__badge:empty {
+  display: none;
+
+}
+.navbar-top a:hover .navbar-top__badge {
+  background-color: #ED1C24;
+}
+.navbar-top__btn {
+	height: 17px;
+	margin: 5px 19px 0 0;
+}
+.navbar-top__btn:after {
+	content: "Выбрать валун";
+}
+.navbar-top__btn-ico {
+	display: none;
+	font-size: 1.5em;
+	line-height: 0.9;
+	margin-top: -10px;
+}
+.navbar-top__burger {
+	display: none;
+  	margin: 10px 0 0 10px;
+	font-size: 2em;
+	line-height: 1;
+	cursor: pointer;
+	color: #9e9e9e;
+}
+input[name="navbar-top__checkbox"] {
+	display: none;
+}
+.navbar-top__burger:hover {
+	color: #000;
+}
+.navbar-top__compens {
+	height: 80px;
+}
+.navbar-top__bottom { 
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	z-index: 10200;
+	width: 100%;
+}
+.navbar-top__bottom li {
+	display: inline-block;
+	font-size: 0.8em;
+	margin: 20px 10px 0 10px;
+}
+a.navbar-top__bottom_light-link:link,
+a.navbar-top__bottom_light-link:active,
+a.navbar-top__bottom_light-link:visited {
+	color: #999;
+	text-decoration: none;
+}
+a.navbar-top__bottom_light-link:hover {
+	color: #fff;
+  	text-decoration: none;
+}
+.navbar-top__bottom_light-link-disabled {
+	color: #fff;
+}
+/* выпадающее меню */
+input#navbar-top__checkbox:checked ~ #navbar-top {
+	height: 110px;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
+	position: fixed;
+	display: block;
+	margin-top: 10px;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
+	margin-top: 10px;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom a.navbar-top__bottom_light-link:link, a.navbar-top__bottom_light-link:active, a.navbar-top__bottom_light-link:visited {
+	color: #03a9f4;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom a.navbar-top__bottom_light-link:hover {
+	color: #0288d1;
+	text-decoration: underline;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom .navbar-top__bottom_light-link-disabled {
+	color: #757575;
+}
+@media (max-width: 1029px) {
+	.navbar-top_small {
+		font-size: 0.5em;
+	}
+	.navbar-top__brand {
+	  	margin: 11px 10px 0 21px;
+	  	line-height:0.7;
+	}
+	.navbar-top__phone {
+		margin: 10px 0 0 0;
+	  	font-size: 1.2em;
+	}
+}
+@media (max-width: 949px) {
+	/* выпадающее меню */
+	input#navbar-top__checkbox:checked ~ #navbar-top {
+		height: 310px;
+	}
+	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
+		position: fixed;
+		display: flex; /* обратить внимание на старые версии браузеров */
+		flex-direction: column;/* обратить внимание на старые версии браузеров */
+		margin-top: 10px;
+		text-align: left;
+		width: 10px;
+	}
+	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
+		margin: 10px 0 0 12px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		position: fixed;
+		display: flex; /* обратить внимание на старые версии браузеров */
+		flex-direction: column; /* обратить внимание на старые версии браузеров */
+		text-align: left;
+		top: 57px;
+		right: 0px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {
+		margin-bottom: 10px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		margin: 5px 0 0 0;
+	  	font-size: 1.6em;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special {
+		display: none;
+	}
+	.navbar-top__info {
+		display: none;
+	}
+	.navbar-top__btn {
+		margin: 5px 10px 0 0;
+	}
+	.navbar-top__special {
+		display: inline-block;
+	}
+}
+@media (max-width: 799px) {
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		position: fixed;
+		display: block;
+		margin: 0;
+	  	font-size: 1.2em;
+	  	top: 65px;
+		right: 25px;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		top: 90px;
+	}
+	.navbar-top__burger {
+		display: block;
+	}
+	.navbar-top__phone {
+		display: none;
+	}
+	.navbar-top__special span[class="glyphicon glyphicon-earphone fc_dark"] {
+		display: inline-block;
+	}
+	.navbar-top__brand {
+		flex-grow: 2; /* адаптиролвать под старые браузеры */
+	}
+	.navbar-top__bottom {
+		display: none;
+	}
+	.navbar-top__compens {
+		height: 20px;
+	}
+}
+@media (max-width: 609px) {
+	.navbar-top__special {
+		display: none;
+	}
+}
+@media (max-width: 419px) {
+	.navbar-top__btn::after {
+		content: "Выбрать"
+	}
+	.navbar-top__compens {
+		height: 10px;
+	}
+}
+@media (max-width: 359px) {
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__phone {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 75px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__send {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 125px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart {
+		position: fixed;
+		display: block;
+		right: 20px;
+		top: 178px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart__badge {
+		position: fixed;
+		display: block;
+		right: 7px;
+		top: 175px;
+		margin: 0;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		display: none;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		display: none;
+	}
+	.navbar-top__btn::after {
+		content: "";
+	}
+	.navbar-top__btn-ico {
+		display: inline;
+	}
+	.navbar-top__btn {
+		padding: 10px 11px 14px 11px !important;
+	}
+}

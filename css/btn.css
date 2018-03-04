@@ -1,0 +1,198 @@
+/*
+developer: Alexander Bukreev, 2018
+e-mail: alexander.v.bukreev@gmail.com
+*/
+/* -----------------------
+/* css for btn
+/* -----------------------*/
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  margin-bottom: 0;
+  font-size: 0.8em;
+  color: #fff !important;
+  text-transform: uppercase;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 21px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.1em;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+a.btn.disabled,
+fieldset[disabled] a.btn {
+  pointer-events: none;
+}
+/* ----------- */
+.btn_large {
+	padding: 10px 16px;
+	font-size: 1.1em;
+	border-radius: 25px;
+}
+/* btn_info */
+.btn_info {
+  color: #fff;
+  background-color: #03a9f4;
+  border-color: #03a9f4;
+}
+.btn_info:focus,
+.btn_info.focus {
+  color: #fff;
+  background-color: #0288d1;
+  border-color: #0288d1;
+}
+.btn_info:hover {
+  color: #fff;
+  background-color: #0288d1;
+  border-color: #0288d1;
+}
+.btn_info:active {
+  color: #fff;
+  background-color: #0288d1;
+  border-color: #0288d1;
+  background-image: none;
+}
+.btn_info:active:hover,
+.btn_info.active:hover,
+.open > .dropdown-toggle.btn_info:hover,
+.btn_info:active:focus,
+.btn_info.active:focus,
+.open > .dropdown-toggle.btn_info:focus,
+.btn_info:active.focus,
+.btn_info.active.focus,
+.open > .dropdown-toggle.btn_info.focus {
+  color: #fff;
+  background-color: #0288d1;
+  border-color: #0288d1;
+}
+.btn_info.disabled:hover,
+.btn_info[disabled]:hover,
+fieldset[disabled] .btn_info:hover,
+.btn_info.disabled:focus,
+.btn_info[disabled]:focus,
+fieldset[disabled] .btn_info:focus,
+.btn_info.disabled.focus,
+.btn_info[disabled].focus,
+fieldset[disabled] .btn_info.focus {
+  background-color: #03a9f4;
+  border-color: #46b8da;
+}
+/* -----------------------
+/* btn_buy */
+/* -----------------------*/
+.btn_buy {
+  color: #fff !important;
+  background-color: #7cb342;
+  /*border-color: #689f38;*/
+}
+.btn_buy:focus,
+.btn_buy.focus {
+  color: #fff;
+  background-color: #689f38;
+  /*border-color: #255625;*/
+}
+.btn_buy:hover {
+  color: #fff;
+  background-color: #689f38;
+  /*border-color: #398439;*/
+}
+.btn_buy:active {
+  color: #fff;
+  background-color: #689f38;
+  /*border-color: #398439;*/
+}
+.btn_buy:active:hover,
+.btn_buy:active:focus,
+.btn_buy:active.focus {
+  color: #fff;
+  background-color: #398439;
+  /*border-color: #255625;*/
+}
+.btn_buy:active {
+  background-image: none;
+}
+.btn_buy.disabled:hover,
+.btn_buy[disabled]:hover,
+fieldset[disabled] .btn_buy:hover,
+.btn_buy.disabled:focus,
+.btn_buy[disabled]:focus,
+fieldset[disabled] .btn_buy:focus,
+.btn_buy.disabled.focus,
+.btn_buy[disabled].focus,
+fieldset[disabled] .btn_buy.focus {
+  background-color: #5cb85c;
+  /*border-color: #4cae4c;*/
+}
+
+/* Social btn */
+.btn_facebook{color:#DCDCDC;background-color:#999;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_facebook:focus{color:#fff;background-color:#2d4373;border-color:rgba(0,0,0,0.2)}
+.btn_facebook:hover{color:#fff;background-color:#2d4373;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_facebook:active{color:#fff;background-color:#23345a;border-color:rgba(0,0,0,0.2)}
+
+
+.btn_google{color:#DCDCDC;background-color:#999;opacity: 0.7;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_google:focus,.btn_google.focus{color:#fff;background-color:#c23321;border-color:rgba(0,0,0,0.2)}
+.btn_google:hover{color:#fff;background-color:#c23321;opacity: 1;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_google:active{color:#fff;background-color:#a32b1c;border-color:rgba(0,0,0,0.2)}
+
+.btn_odnoklassniki{color:#DCDCDC;background-color:#999;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_odnoklassniki:focus,.btn_odnoklassniki.focus{color:#fff;background-color:#d35b0a;border-color:rgba(0,0,0,0.2)}
+.btn_odnoklassniki:hover{color:#fff;background-color:#d35b0a;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_odnoklassniki:active{color:#fff;background-color:#b14c09;border-color:rgba(0,0,0,0.2)}
+
+.btn_tumblr{color:#DCDCDC;background-color:#999;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_tumblr:focus,.btn_tumblr.focus{color:#fff;background-color:#1c2d3f;border-color:rgba(0,0,0,0.2)}
+.btn_tumblr:hover{color:#fff;background-color:#1c2d3f;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_tumblr:active{color:#fff;background-color:#111c26;border-color:rgba(0,0,0,0.2)}
+
+.btn_twitter{color:#DCDCDC;background-color:#999;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_twitter:focus,.btn_twitter.focus{color:#fff;background-color:#2795e9;border-color:rgba(0,0,0,0.2)}
+.btn_twitter:hover{color:#fff;background-color:#2795e9;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_twitter:active{color:#fff;background-color:#1583d7;border-color:rgba(0,0,0,0.2)}
+
+.btn_vk{color:#DCDCDC;background-color:#999;opacity: 0.7;border-color:rgba(0,0,0,0.2)}
+.btn_vk:focus,.btn_vk.focus{color:#fff;background-color:#466482;border-color:rgba(0,0,0,0.2)}
+.btn_vk:hover{color:#fff;background-color:#466482;opacity: 1;border-color:rgba(0,0,0,0.2)}
+.btn_vk:active{color:#fff;background-color:#3a526b;border-color:rgba(0,0,0,0.2)}
