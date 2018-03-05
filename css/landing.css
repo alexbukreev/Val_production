@@ -9,14 +9,13 @@ e-mail: alexander.v.bukreev@gmail.com
 	padding-bottom: 100px;
 }
 .landing_top-1 {
-  text-shadow:0 0 3px #000000, 0 0 10px #000000;
-  padding-top: 0;
+  text-shadow:0 0 0.05em #000000, 0 0 0.2em #000000;
   margin: 20px 0 30px 0;
   line-height: 1.4em;
 }
 .landing_top-2 {
-  text-shadow:0 0 3px #000000, 0 0 10px #000000;
-  padding-bottom: 50px;
+  text-shadow:0 0 0.1em #000000, 0 0 0.3em #000000;
+  margin: 0 0 90px 0;
 }
 .landing__num {
 	 margin: 30px 0 40px 0;
@@ -62,12 +61,50 @@ e-mail: alexander.v.bukreev@gmail.com
 .landing_text-center {
   text-align: center;
 }
+@media (max-width: 1099px) {
+  .landing_decrease-font {
+    font-size: 1.8em;
+  }
+  .landing_top-1 {
+    font-size: 2.8em;
+    margin: 15px 0 30px 0;
+    line-height: 1.4em;
+  }
+  .landing_top-2 {
+    font-size: 1.3em;
+    margin: 0 0 70px 0;
+  }
+}
+@media (max-width: 949px) {
+  .landing_decrease-font {
+    font-size: 1.5em;
+  }
+  .landing_top-1 {
+    font-size: 2.5em;
+    margin-top: 10px;
+    line-height: 1.3em;
+  }
+  .landing_top-2 {
+    font-size: 1.1em;
+    margin: 0 0 60px 0;
+  }
+}
 @media (max-width: 999px) {
   .landing__logo {
     width: 120px;
   }
 }
+@media (max-width: 799px) {
+  .landing_top-1 {
+    font-size: 2.2em;
+    margin-top: 30px;
+    line-height: 1.3em;
+  }
+}
 @media (max-width: 779px) {
+  .landing_decrease-font {
+    font-size: 1.2em;
+  }
   .landing__logo {
     display: flex; /* обратить внимание на старые версии браузеров */
     align-items: center; /* обратить внимание на старые версии браузеров */
@@ -83,5 +120,29 @@ e-mail: alexander.v.bukreev@gmail.com
   }
   .landing_text-center {
     text-align: left;
+  }
+}
+@media (max-width: 709px) {
+  .landing_top-1 {
+    font-size: 1.8em;
+    margin: 30px 0 20px 0;
+    line-height: 1.3em;
+  }
+  .landing_top-2 {
+    font-size: 1em;
+  }
+}
+@media (max-width: 499px){
+  .landing__round-img {
+    max-width: 100%;
+    height: 80px;
+    margin: 1vw 25px 1vw 5vh;
+  }
+}
+@media (max-width: 399px){
+  .landing__round-img {
+    max-width: 100%;
+    height: 60px;
+    margin: 1vw 25px 1vw 0;
   }
 }
