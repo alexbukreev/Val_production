@@ -35,6 +35,15 @@ a:active, a:hover {
 .justify-content {
 	justify-content: space-between; /* адаптиролвать под старые браузеры */
 }
+.justify-content_right {
+	justify-content: flex-end; /* адаптиролвать под старые браузеры */
+}
+.flex-wrap-wrap {
+	flex-wrap: wrap; /* адаптиролвать под старые браузеры */
+}
+.flex-align-items-baseline {
+	align-items: baseline;  /* адаптиролвать под старые браузеры */
+}
 h1 {
 	font-size: 3.2em;
 	letter-spacing: 0.06em;
@@ -65,7 +74,12 @@ a:hover {
   	text-decoration: underline;
 }
 hr {
-	margin: 0;
+    color: #bdbdbd; /*для IE */
+    background-color:#bdbdbd; /*для Firefox, Opera, Safari*/
+    border:0px none;
+    height:1px; /* высота 1px IE, Firefox, Opera, Safari */
+    clear:both; /* для очистки, если тег идет после float елемента */
+    margin: 0;
 }
 .small {
 	font-size: 0.8em;
@@ -155,6 +169,22 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
   display: block;
   max-width: 100%;
   height: auto;
+}
+.main-title {
+	margin-bottom: 12px;
+	align-items: baseline; /* адаптиролвать под старые браузеры */
+}
+.main-title_h {
+	font-size: 2.0em;
+	padding-right: 1em;
+	margin: 0 0 10px 0;
+}
+.checkbox-inline {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
 }
 @media (max-width: 1099px) {
 	.container {

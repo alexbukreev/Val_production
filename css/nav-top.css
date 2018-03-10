@@ -136,10 +136,13 @@ a.navbar-top__bottom_light-link:visited {
 }
 a.navbar-top__bottom_light-link:hover {
 	color: #fff;
-  	text-decoration: none;
+  	text-decoration: underline;
 }
 .navbar-top__bottom_light-link-disabled {
 	color: #fff;
+}
+.navbar-top__bottom_link-disabled {
+	color: #000;
 }
 /* выпадающее меню */
 input#navbar-top__checkbox:checked ~ #navbar-top {
@@ -153,15 +156,20 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	margin-top: 10px;
 }
-input#navbar-top__checkbox:checked ~ section .navbar-top__bottom a.navbar-top__bottom_light-link:link, a.navbar-top__bottom_light-link:active, a.navbar-top__bottom_light-link:visited {
+input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:link {
 	color: #03a9f4;
 }
-input#navbar-top__checkbox:checked ~ section .navbar-top__bottom a.navbar-top__bottom_light-link:hover {
-	color: #0288d1;
-	text-decoration: underline;
+input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:active {
+	color: #03a9f4;
 }
-input#navbar-top__checkbox:checked ~ section .navbar-top__bottom .navbar-top__bottom_light-link-disabled {
-	color: #757575;
+input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:visited {
+	color: #03a9f4;
+}
+input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:hover {
+	color: #0288d1;
+}
+input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disabled {
+	color: #000;
 }
 @media (max-width: 1029px) {
 	.navbar-top_small {

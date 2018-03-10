@@ -24,15 +24,15 @@ e-mail: alexander.v.bukreev@gmail.com
 	 margin-top: 0;
 }
 .landing__bg-img_color {
-  background: url('http://art-eco.ru/wa-data/public/site/val/img/background/bg.jpg') 
+  background: url('http://art-eco.ru/wa-data/public/site/valunov/img/bg/bg.jpg') 
   no-repeat center center fixed;
 }
 .landing__bg-img_tr {
-  background: url('http://art-eco.ru/wa-data/public/site/val/img/background/bg_tr.jpg')
+  background: url('http://art-eco.ru/wa-data/public/site/valunov/img/bg/bg_tr.jpg')
   no-repeat center center fixed;
 }
 .landing__bg-img_dark {
-  background: url('http://art-eco.ru/wa-data/public/site/val/img/background/bg_tr_dark.jpg')
+  background: url('http://art-eco.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark.jpg')
   no-repeat center center fixed;
 }
 .landing__bg-img {

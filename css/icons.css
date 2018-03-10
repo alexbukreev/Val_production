@@ -6,8 +6,8 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot');
+  src: url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -53,4 +53,19 @@
 }
 .glyphicon-ok-circle:before {
   content: "\e089";
+}
+.glyphicon-info-sign:before {
+  content: "\e086";
+}
+.glyphicon-question-sign:before {
+  content: "\e085";
+}
+.glyphicon-sort-by-attributes:before {
+  content: "\e155";
+}
+.glyphicon-th-large:before {
+  content: "\e010";
+}
+.glyphicon-th-list:before {
+  content: "\e012";
 }

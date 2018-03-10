@@ -1,0 +1,30 @@
+.market__icon {
+	font-size: 0.7em;
+	cursor: pointer;
+	color: #bdbdbd;
+}
+.market__icon:hover {
+	color: #757575;
+}
+.market__top-line {
+	 padding: 10px 0 4px 0;
+}
+.market__title {
+	margin: 0;
+	margin-bottom: 10px;
+	align-items: baseline; /* адаптиролвать под старые браузеры */
+}
+.market__sort {
+	display: inline-block;
+	cursor: pointer;
+	color: #03a9f4;
+}
+.market__sort_padding {
+	padding-right: 1em;
+}
+.market__item {
+	min-height: 300px;
+	margin: 0 0 3px 0;
+	border: 1px solid #bdbdbd;
+	padding: 10px;
+}
