@@ -74,8 +74,8 @@ a:hover {
   	text-decoration: underline;
 }
 hr {
-    color: #bdbdbd; /*для IE */
-    background-color:#bdbdbd; /*для Firefox, Opera, Safari*/
+    color: #e0e0e0; /*для IE */
+    background-color:#e0e0e0; /*для Firefox, Opera, Safari*/
     border:0px none;
     height:1px; /* высота 1px IE, Firefox, Opera, Safari */
     clear:both; /* для очистки, если тег идет после float елемента */

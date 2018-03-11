@@ -47,6 +47,9 @@
 .market__item-btn {
 	margin: 25px 0 30px 0;
 }
+.market__item-price {
+	margin: 15px 0 0 0;
+}
 @media (max-width: 1099px) {
 	.market__container {
 		width: 1020px;
