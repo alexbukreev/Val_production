@@ -1,0 +1,49 @@
+.item__big-img-container{
+	width: 399px;
+}
+.item__small-img-container {
+	margin-top: 10px;
+}
+.item__small-img-container_marging {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.item__info-container {
+	width: 100%;
+	padding-left: 25px;
+}
+.item__info-container_sub {
+	padding: 5px 10px;
+}
+.item__info-container_marging {
+	margin: 0;
+}
+.item__info-container_price {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	align-items: center; /* адаптиролвать под старые браузеры */
+}
+.item__info-container_custom {
+	border: 1px solid #e0e0e0;
+	padding: 10px;
+	margin: 0 0 3px 0;
+}
+.item__textures {
+	padding-top: 50px;
+}
+.item__reviews-font {
+	font-size: 1.3em;
+}
+.item__reviews {
+	align-items: center;
+}
+.item__reviews-body {
+	margin: 25px 0 25px 0;
+}
+.item__reviews-box {
+	min-width: 5px;
+	background-color: #e0e0e0;
+}
+.item__reviews-text {
+	padding: 0 0 0 25px;
+}

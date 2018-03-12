@@ -22,6 +22,12 @@ body {
 p {
 	letter-spacing: 0.04em;
 }
+input {
+	border-style:solid;
+    border-width:1px;
+	border-color: #bdbdbd;
+	height: 14px;
+}
 a:active, a:hover {
 	outline:0;
 } 
@@ -48,6 +54,9 @@ h1 {
 	font-size: 3.2em;
 	letter-spacing: 0.06em;
 }
+h1 a:hover {
+	text-decoration: none;
+}
 h2 {
 	font-size: 2.8em;
 	letter-spacing: 0.06em;
@@ -62,6 +71,9 @@ h4 {
 }
 h5 {
 	font-size: 1.2em;
+}
+h5 a:hover {
+	text-decoration: none;
 }
 a:link,
 a:active,
@@ -105,8 +117,14 @@ hr {
 .fc-gray {
 	color: #757575;
 }
+.fc-ultra-gray {
+	color: #bdbdbd;
+}
 .fc-withe {
 	color:#ffffff;
+}
+.text-lowercase {
+	text-transform: lowercase;
 }
 a:link .fc_dark,
 a:active .fc_dark,
@@ -179,12 +197,21 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	padding-right: 1em;
 	margin: 0 0 10px 0;
 }
+.radio-inline,
 .checkbox-inline {
 	position: relative;
 	display: inline-block;
 	cursor: pointer;
 	margin: 0;
 	padding: 0;
+}
+.small__icon {
+	font-size: 15px;
+	cursor: pointer;
+	color: #bdbdbd;
+}
+.small__icon:hover {
+	color: #757575;
 }
 @media (max-width: 1099px) {
 	.container {

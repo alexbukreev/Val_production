@@ -1,0 +1,24 @@
+<footer class="text-center">
+  <hr>
+  <section class="footer_questions">
+    <div class="container">
+      <h3 class="landing__title-marging fw-light" >Остались вопросы?</h3>
+      <a data-toggle="modal" data-target="#connectionForm" class="btn btn_info btn_large" role="button">Свяжитесь с нами</a>
+    </div><!-- Остались вопросы? -->
+  </section>
+  <section class="footer_info">
+    <p class="footer_share" >Поделиться этой страницей в соцсетях</p>
+    <a class="footer__social-btn btn_vk"><span class="fa fa-vk"></span></a>
+    &nbsp;
+    <a class="footer__social-btn btn_odnoklassniki"><span class="fa fa-odnoklassniki"></span></a>
+    &nbsp;
+    <a class="footer__social-btn btn_facebook"><span class="fa fa-facebook"></span></a>
+    &nbsp;
+    <a class="footer__social-btn btn_twitter"><span class="fa fa-twitter"></span></a>
+    &nbsp;
+    <a class="footer__social-btn btn_tumblr"><span class="fa fa-tumblr"></span></a>
+    &nbsp;
+    <a class="footer__social-btn btn_google"><span class="fa fa-google"></span></a>
+    <p class="small footer_copy">&copy; Валунов. Искуственные валуны, {time()|wa_datetime:"Y"}</p>
+  </section>            
+</footer>

@@ -69,3 +69,9 @@
 .glyphicon-th-list:before {
   content: "\e012";
 }
+.glyphicon-chevron-right:before {
+  content: "\e080";
+}
+.glyphicon-pencil:before {
+  content: "\270f";
+}

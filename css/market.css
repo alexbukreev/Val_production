@@ -4,11 +4,6 @@
   margin-left: auto;
   width: 1090px;
 }
-.market__icon {
-	font-size: 0.7em;
-	cursor: pointer;
-	color: #bdbdbd;
-}
 .market__icon:hover {
 	color: #757575;
 }
@@ -49,6 +44,9 @@
 }
 .market__item-price {
 	margin: 15px 0 0 0;
+}
+.market__item-prop {
+	margin: 0 3px;
 }
 @media (max-width: 1099px) {
 	.market__container {

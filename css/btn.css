@@ -7,7 +7,8 @@ e-mail: alexander.v.bukreev@gmail.com
 /* -----------------------*/
 .btn {
   display: inline-block;
-  padding: 12px 18px;
+  height: 17px;
+  padding: 12px 20px;
   margin-bottom: 0;
   font-size: 0.8em;
   color: #fff !important;
@@ -66,7 +67,8 @@ fieldset[disabled] a.btn {
 }
 /* ----------- */
 .btn_large {
-	padding: 10px 16px;
+	padding: 10px 25px;
+  height: 26px;
 	font-size: 1.1em;
 	border-radius: 25px;
 }
@@ -79,12 +81,12 @@ fieldset[disabled] a.btn {
 .btn_info:focus,
 .btn_info.focus {
   color: #fff;
-  background-color: #0288d1;
+  background-color: #039be5;
   border-color: #0288d1;
 }
 .btn_info:hover {
   color: #fff;
-  background-color: #0288d1;
+  background-color: #039be5;
   border-color: #0288d1;
 }
 .btn_info:active {
@@ -123,35 +125,36 @@ fieldset[disabled] .btn_info.focus {
 /* -----------------------*/
 .btn_buy {
   color: #fff !important;
-  background-color: #7cb342;
+  background-color: #8bc34a;
   /*border-color: #689f38;*/
 }
 .btn_buy:focus,
 .btn_buy.focus {
   color: #fff;
-  background-color: #689f38;
+  background-color: #7cb342;
   /*border-color: #255625;*/
 }
 .btn_buy:hover {
   color: #fff;
-  background-color: #689f38;
+  background-color: #7cb342;
   /*border-color: #398439;*/
 }
 .btn_buy:active {
   color: #fff;
-  background-color: #689f38;
+  background-color: #7cb342;
   /*border-color: #398439;*/
 }
 .btn_buy:active:hover,
 .btn_buy:active:focus,
 .btn_buy:active.focus {
   color: #fff;
-  background-color: #398439;
+  background-color: #689f38;
   /*border-color: #255625;*/
 }
 .btn_buy:active {
   background-image: none;
 }
+.btn_buy[disabled],
 .btn_buy.disabled:hover,
 .btn_buy[disabled]:hover,
 fieldset[disabled] .btn_buy:hover,
@@ -161,7 +164,7 @@ fieldset[disabled] .btn_buy:focus,
 .btn_buy.disabled.focus,
 .btn_buy[disabled].focus,
 fieldset[disabled] .btn_buy.focus {
-  background-color: #5cb85c;
+  background-color: #aed581;
   /*border-color: #4cae4c;*/
 }
 

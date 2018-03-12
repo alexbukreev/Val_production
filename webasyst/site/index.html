@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<! -- developer: Alexander Bukreev, 2018 -->
+<! -- e-mail: alexander.v.bukreev@gmail.com -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{$wa->title()|escape}</title>
+    <meta name="Keywords" content="{$wa->meta('keywords')|escape}" />
+    <meta name="Description" content="{$wa->meta('description')|escape}" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- css -->
+    <link href="/wa-data/public/site/valunov/css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/nav-top.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/footer.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/icons.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/landing.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/btn.css" rel="stylesheet" type="text/css"/>
+    <link href="/wa-data/public/site/valunov/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <!-- js -->
+    <script type="text/javascript" src="/wa-data/public/site/valunov/js/common.js"></script>
+    <script type="text/javascript" src="{$wa_url}wa-content/js/jquery/jquery-1.8.2.min.js"></script>
+    {$wa->js()} {* links active plugins JS *}
+</head>
+<body>
+    {include file="nav_top.html"}
+    {$content}
+</body>
+    <!-- Footer -->
+    {include file="footer.html"}
+</html>
