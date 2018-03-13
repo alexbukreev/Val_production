@@ -102,27 +102,27 @@
         </section>
         <section class="item__info-container">
           <hr>
-          <div class="flex-wrap justify-content item__info-container_sub item__info-container_price">
+          <div class="flex-wrap flex-wrap-wrap justify-content item__info-container_sub item__info-container_price">
             <h3 class="item__info-container_marging">2 900 руб.</h3>
-            <a href="" class="btn btn_buy btn_large">В корзину</a>
+            <button type="submit" value="[`Add to cart`]" class="btn btn_buy btn_large">В корзину</button>
           </div>
-          <section class="item__info-container_custom">
-            <div class="item__info-container_sub">
-              <form>
-                <label class="small">Кол-во:</label>
-                <input type="number" value="1" min="1">
-              </form>
+          <div>
+            <label class="radio-inline">
+              <input type="radio" name="strengthItem" checked>&nbsp;Стандартная&nbsp;прочность&nbsp;2&nbsp;900&nbsp;руб.
+            </label>
+            <br>
+            <label class="radio-inline">
+              <input type="radio" name="strengthItem" >&nbsp;Усиленная&nbsp;прочность&nbsp;3&nbsp;770&nbsp;руб. 
+            </label>
+            <div class="item__strength-info">
+                <a href="" class=" small">Подробнее о прочности валунов...</a>
             </div>
-            <div class="item__info-container_sub">
-              <label class="radio-inline small">
-                <input type="radio" name="strengthItem" checked>&nbsp;Стандартная&nbsp;прочность&nbsp;2&nbsp;900&nbsp;руб.
-              </label>
-              <label class="radio-inline small">
-                <input type="radio" name="strengthItem" >&nbsp;Усиленная&nbsp;прочность&nbsp;3&nbsp;770&nbsp;руб. 
-              </label>
-              <span class="glyphicon glyphicon-question-sign fc-gray small__icon" title="Подробнее"></span>
-            </div>
-          </section>
+            <form class="item__info-container_custom">
+              <label>Кол-во:</label>
+              <input type="number" value="1" min="1">
+              <label>шт.</label>
+            </form>
+          </div>
           <div class="flex-wrap justify-content item__info-container_sub">
             <span class="fw-bold">Тип:</span>
             <span>Искусственный&nbsp;валун</span>

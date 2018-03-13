@@ -24,9 +24,10 @@
 	align-items: center; /* адаптиролвать под старые браузеры */
 }
 .item__info-container_custom {
-	border: 1px solid #e0e0e0;
+	border: 0px solid #e0e0e0;
 	padding: 10px;
-	margin: 0 0 3px 0;
+	margin: 10px 0 30px 0;
+	background-color: #f1f8e9;
 }
 .item__textures {
 	padding-top: 50px;
@@ -46,4 +47,7 @@
 }
 .item__reviews-text {
 	padding: 0 0 0 25px;
+}
+.item__strength-info {
+	padding: 0 0 10px 0;
 }

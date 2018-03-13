@@ -5,9 +5,14 @@ e-mail: alexander.v.bukreev@gmail.com
 /* -----------------------
 /* css for btn
 /* -----------------------*/
+/* ----------- */
+.btn_large {
+  padding: 12px 25px;
+  font-size: 1.1em !important;
+  border-radius: 25px;
+}
 .btn {
   display: inline-block;
-  height: 17px;
   padding: 12px 20px;
   margin-bottom: 0;
   font-size: 0.8em;
@@ -64,13 +69,6 @@ fieldset[disabled] .btn {
 a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
-}
-/* ----------- */
-.btn_large {
-	padding: 10px 25px;
-  height: 26px;
-	font-size: 1.1em;
-	border-radius: 25px;
 }
 /* btn_info */
 .btn_info {
