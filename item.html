@@ -87,16 +87,10 @@
         <section>
           <div class="item__big-img-container">
             <img class="img-responsive" src="./market_img/dummy_1.gif">
-            <section class="flex-wrap">
-              <div class="item__small-img-container">
-              <img class="img-responsive" src="./market_img/dummy_1.gif">
-              </div>
-              <div class="item__small-img-container item__small-img-container_marging">
-                <img class="img-responsive" src="./market_img/dummy_2.gif">
-              </div>
-              <div class="item__small-img-container">
-                <img class="img-responsive" src="./market_img/dummy_3.gif">
-              </div>
+            <section class="flex-wrap item__small-img-container">
+              <img class="img-responsive item__small-img-container" src="./market_img/dummy.gif">
+              <img class="img-responsive item__small-img-container" src="./market_img/dummy.gif">
+              <img class="img-responsive item__small-img-container" src="./market_img/dummy.gif">
             </section>
           </div>
         </section>
@@ -107,17 +101,17 @@
             <button type="submit" value="[`Add to cart`]" class="btn btn_buy btn_large">В корзину</button>
           </div>
           <div>
-            <label class="radio-inline">
+            <label class="radio-inline middle">
               <input type="radio" name="strengthItem" checked>&nbsp;Стандартная&nbsp;прочность&nbsp;2&nbsp;900&nbsp;руб.
             </label>
             <br>
-            <label class="radio-inline">
+            <label class="radio-inline middle">
               <input type="radio" name="strengthItem" >&nbsp;Усиленная&nbsp;прочность&nbsp;3&nbsp;770&nbsp;руб. 
             </label>
             <div class="item__strength-info">
-                <a href="" class=" small">Подробнее о прочности валунов...</a>
+                <a href="" class=" small">Подробнее о прочности валунов</a>
             </div>
-            <form class="item__info-container_custom">
+            <form class="item__info-container_custom middle">
               <label>Кол-во:</label>
               <input type="number" value="1" min="1">
               <label>шт.</label>
@@ -156,10 +150,11 @@
         <h1 class="main-title_h"><span class="small fc-gray">Варианты покрытия для этой модели валуна:</span></h1>
         <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;подробнее&nbsp;о&nbsp;покрытии&nbsp;валунов</a>
       </section>
-      <section class="container">
+      <section class="container margin-bottom_10">
         <hr>
       </section>
-      <section class="market__container flex-wrap flex-wrap-wrap item__small-img-container">
+      <section class="market__container flex-wrap flex-wrap-wrap">
+        
         <div class="market__item">
           <a href="item.html"><img src="./market_img/198.jpg"/></a>
           <h5 class="market__item-tittle"><a href="item.html">Валун-50-1</a></h5>
@@ -223,28 +218,9 @@
           <h4 class="market__item-price">13 900 руб.</h4>
           <a href="" class="btn btn_buy market__item-btn">В корзину</a>
         </div>
-        <div class="market__item">
-          <a href="item.html"><img src="./market_img/198.jpg"/></a>
-          <h5 class="market__item-tittle"><a href="item.html">Валун-50-1</a></h5>
-          <hr>
-          <div class="flex-wrap justify-content small market__item-prop">
-            <span class="fw-bold">Диаметр:</span>
-            <span>80 см</span>
-          </div>
-          <hr>
-          <div class="flex-wrap justify-content small market__item-prop">
-            <span class="fw-bold">Покрытие:</span>
-            <span>Красный гранит</span>
-          </div>
-          <hr>
-          <div class="flex-wrap justify-content small market__item-prop">
-            <span class="fw-bold">Прочность:</span>
-            <span>Стандартная</span>
-          </div>
-          <h4 class="market__item-price">13 900 руб.</h4>
-          <a href="" class="btn btn_buy market__item-btn">В корзину</a>
-        </div>
+        
       </section>
+
       <section class="container">
         <section class="flex-wrap flex-wrap-wrap justify-content item__reviews">
           <span class="item__reviews-font fw-bold">Отзывы:</span>
@@ -254,11 +230,11 @@
         <section class="flex-wrap item__reviews-body">
           <div class="item__reviews-box"></div>
           <div class="item__reviews-text">
-            <section class="flex-wrap flex-wrap-wrap justify-content">
-              <span class="fw-bold">Автор&nbsp;</span>
+            <section class="flex-wrap flex-wrap-wrap justify-content flex-align-items-baseline">
+              <span class="fw-bold">Заголовок&nbsp;<span class="small">|&nbsp;Автор</span></span>
               <span class="small">Вчера 16:15</span>
             </section>
-            <p>Три стороки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки три строки..</p>
+            <p>Три стороки три строки три стр</p>
             <a href="">Ответить</a>
           </div>
         </section>

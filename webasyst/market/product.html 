@@ -32,9 +32,9 @@
                 {$wa->shop->productImgHtml($product, '399x0', [ 'itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape|cat:' ':strip_tags($product.summary)|escape ])}
                     <!-- gallery -->
                 {if count($product.images) > 1}
-                    <div class="flex-wrap justify-content" id="product-gallery">
+                    <div class="flex-wrap" id="product-gallery">
                         {foreach $product.images as $image}
-                            <div>                    
+                            <div style="margin: 1px 12px 0 0;">                    
                                 <a id="product-image-{$image.id}" href="#">{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '125x125', ['alt' => $product.name|cat:' - ':$image.description|escape])}</a>
                             </div>
                         {/foreach}
@@ -81,7 +81,7 @@
                 {foreach $product.skus as $sku}
                     {$sku_available = $product.status && $sku.available && ($wa->shop->settings('ignore_stock_count') || $sku.count === null || $sku.count > 0)}
                     <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        <label{if !$sku.available} class="disabled radio-inline"{/if}>
+                        <label{if !$sku.available} class="disabled radio-inline middle"{else} class="radio-inline middle" {/if}>
                             <input name="sku_id" type="radio" value="{$sku.id}"{if !$sku.available} disabled="true"{/if}{if !$sku_available}data-disabled="1"{/if}{if $sku.id == $product.sku_id} checked="checked"{/if} data-compare-price="{shop_currency($sku.compare_price, $product.currency, null, 0)}" data-price="{shop_currency($sku.price, $product.currency, null, 0)}"{if $sku.image_id} data-image-id="{$sku.image_id}"{/if}> <span itemprop="name">{$sku.name|escape}</span>
                             {if $sku.sku}<span class="hint" itemprop="name">{$sku.sku|escape}</span>{/if}
                             <meta itemprop="price" content="{shop_currency($sku.price, $product.currency)}">
@@ -97,7 +97,7 @@
                     {$product_available = $product_available or $sku_available}
                 {/foreach}
                 <div class="item__strength-info">
-                    <a href="" class="small">Подробнее о прочности валунов...</a>
+                    <a href="" class="small">Подробнее о прочности валунов</a>
                 </div>
             </div>
         {else}
@@ -124,7 +124,7 @@
         {/if}
                    
 
-                <div class="item__info-container_custom add2cart">
+                <div class="item__info-container_custom middle add2cart">
                     <label>Кол-во:</label>
                    <!-- Value -->
                     <input type="number" name="quantity" value="1" min="1">
@@ -166,85 +166,36 @@
     </section>
 
 
-
-
-
-
-
-
-    <!-- PRODUCT INFO -->
-    <div class="content right300px">
-    
-        <div class="product-page" id="overview">
-
-
-            <div class="clear-left"></div>
-            
-            <!-- plugin hook: 'frontend_product.block' -->
-            {* @event frontend_product.%plugin_id%.block *}
-            {foreach $frontend_product as $_}{$_.block}{/foreach}
-    
-            {if $product.description}
-                <div class="description" id="product-description" itemprop="description">{$product.description}</div>
-            {/if}
-            <!-- product reviews -->
-            <div class="reviews">
-                <h3>Отзывы</h3>
-                <ul class="menu-v with-icons">
-                    {foreach $reviews as $review}
-                        <li data-id={$review.id} data-parent-id="0">
-                            {include file="review.html" reply_allowed=false inline}
-                        </li>
-                    {/foreach}
-                </ul>
-                {if !$reviews}
-                    <p>{sprintf('[`Be the first to <a href="%s">write a review</a> of this product!`]', 'reviews/')}</p>
-                {else}
-                    {sprintf(_w(
-                            'Read <a href="%s">all %d review</a> on %s', 
-                            'Read <a href="%s">all %d reviews</a> on %s', 
-                            $reviews_total_count, false
-                        ), 'reviews/', $reviews_total_count, $product.name|escape)
-                    };
-                {/if}
-            </div>
-    
-        </div>
-    </div>
-</section>
-Список
 {if $wa->shop}
+    <section class="container flex-wrap justify-content flex-wrap-wrap main-title item__textures">
+        <h1 class="main-title_h"><span class="small fc-gray">Варианты покрытия для этой модели валуна:</span></h1>
+        <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;подробнее&nbsp;о&nbsp;покрытии&nbsp;валунов</a>
+    </section>
+    <section class="container margin-bottom_10">
+        <hr>
+    </section>
 {$products = $wa->shop->productSet({$product->features['id_spiska']})}
-{include file="list-table.html" products=$products}
+{include file="list-items.html" products=$products}
 {/if}
 
+<!-- reviews -->
+<section class="container">
+        <section class="flex-wrap flex-wrap-wrap justify-content item__reviews">
+          <span class="item__reviews-font fw-bold">Отзывы:</span>
+          <span>{sprintf('[`<a href="%s"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Оставить отзыв</a>`]', 'reviews/')}</span>
+        </section>
+        {foreach $reviews as $review}
+        <hr>
+        <span data-id={$review.id} data-parent-id="0">
+            {include file="review.html" reply_allowed=false inline}
+        </span>
+        {/foreach}
+      </section>
+</section>
 
-<!-- RELATED PRODUCTS -->
-{$upselling = $product->upSelling()}
-{$crossselling = $product->crossSelling(2)}
 
-{if $upselling || $crossselling}
-    <div class="content right300px">
 
-        {if $upselling}
-            <div class="related">
-                <h3>
-                    смотри также 1
-                    
-                </h3>
-                {include file="list-table.html" products=$upselling}
-            </div>
-        {/if}
 
-        {if $crossselling}
-            <div class="related">
-                <h3>смотри также 2</h3>
-                {include file="list-table.html" products=$crossselling}
-            </div>
-        {/if}
-
-    </div>
-{/if}
 
 <script type="text/javascript">
     var currency = {json_encode($currency_info)};

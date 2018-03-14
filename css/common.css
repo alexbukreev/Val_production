@@ -93,8 +93,14 @@ hr {
     clear:both; /* для очистки, если тег идет после float елемента */
     margin: 0;
 }
+.margin-bottom_10 {
+	margin-bottom: 10px;
+}
 .small {
 	font-size: 0.8em;
+}
+.middle {
+	font-size: 0.9em;
 }
 .text-justify {
   text-align: justify;

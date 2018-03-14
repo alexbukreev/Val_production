@@ -2,11 +2,7 @@
 	width: 399px;
 }
 .item__small-img-container {
-	margin-top: 10px;
-}
-.item__small-img-container_marging {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin: 6px 12px 0 0;
 }
 .item__info-container {
 	width: 100%;
@@ -47,6 +43,7 @@
 }
 .item__reviews-text {
 	padding: 0 0 0 25px;
+	width: 100%;
 }
 .item__strength-info {
 	padding: 0 0 10px 0;

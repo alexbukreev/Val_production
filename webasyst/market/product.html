@@ -13,17 +13,51 @@
     </ul>
 </section>
 
-<div itemscope itemtype="http://schema.org/Product">
-
-    <h1 itemprop="name">
-        {$product.name|escape}
-    </h1>
-
-    <!-- add to cart -->
-    <form id="cart-form" method="post" action="{$wa->getUrl('/frontendCart/add')}">
+<section itemscope itemtype="http://schema.org/Product">
+    <!-- tittle -->
+    <section class="container flex-wrap justify-content flex-wrap-wrap main-title">
+        <h1 class="main-title_h">
+            <a href="{$wa_app_url}">Магазин</a>
+            <span class="glyphicon glyphicon-chevron-right small fc-ultra-gray"></span>
+            <span itemprop="name"></span>{$product.name|escape} <span class="small fc-gray text-lowercase">{$product->features['pokrytie_valuna']}</span></span>
+        </h1>
+        <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун</a>
+    </section>
+    
+    <!-- image gallery -->
+    <section class="container flex-wrap">
+        <section>
+            <div class="item__big-img-container">
+                <!-- main image -->
+                {$wa->shop->productImgHtml($product, '399x0', [ 'itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape|cat:' ':strip_tags($product.summary)|escape ])}
+                    <!-- gallery -->
+                {if count($product.images) > 1}
+                    <div class="flex-wrap" id="product-gallery">
+                        {foreach $product.images as $image}
+                            <div style="margin: 1px 12px 0 0;">                    
+                                <a id="product-image-{$image.id}" href="#">{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '125x125', ['alt' => $product.name|cat:' - ':$image.description|escape])}</a>
+                            </div>
+                        {/foreach}
+                    </div>
+                {/if}
+            </div>
+        </section>
+        <section class="item__info-container">
+            <hr>
+            <!-- add to cart -->
+            <form id="cart-form" method="post" action="{$wa->getUrl('/frontendCart/add')}">
+                
+                <!-- price -->
+                <div class="flex-wrap flex-wrap-wrap justify-content item__info-container_sub item__info-container_price add2cart">
+                    <h3 class="item__info-container_marging price nowrap"  data-price="{shop_currency($product.price, null, null, 0)}">{shop_currency($product.price)}</h3>
+                    <button type="submit" value="[`Add to cart`]" class="btn btn_buy btn_large">[`Add to cart`]</button>
+                </div>
+            
+           
+    
 
         {if $product.sku_type}
-
+        
         <!-- SELECTABLE FEATURES selling mode -->
         {$product_available = $product.status}
         <div class="options">
@@ -42,13 +76,12 @@
         <!-- FLAT SKU LIST selling mode -->
         {$product_available = false}
         {if count($product.skus) > 1}
-        
             {* SKU selector *}
-            <ul class="skus" id="product-skus">
+            <div class="skus" id="product-skus">
                 {foreach $product.skus as $sku}
                     {$sku_available = $product.status && $sku.available && ($wa->shop->settings('ignore_stock_count') || $sku.count === null || $sku.count > 0)}
-                    <li itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                        <label{if !$sku.available} class="disabled"{/if}>
+                    <span itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        <label{if !$sku.available} class="disabled radio-inline"{/if}>
                             <input name="sku_id" type="radio" value="{$sku.id}"{if !$sku.available} disabled="true"{/if}{if !$sku_available}data-disabled="1"{/if}{if $sku.id == $product.sku_id} checked="checked"{/if} data-compare-price="{shop_currency($sku.compare_price, $product.currency, null, 0)}" data-price="{shop_currency($sku.price, $product.currency, null, 0)}"{if $sku.image_id} data-image-id="{$sku.image_id}"{/if}> <span itemprop="name">{$sku.name|escape}</span>
                             {if $sku.sku}<span class="hint" itemprop="name">{$sku.sku|escape}</span>{/if}
                             <meta itemprop="price" content="{shop_currency($sku.price, $product.currency)}">
@@ -59,10 +92,14 @@
                                 <link itemprop="availability" href="http://schema.org/InStock" />
                             {/if}
                         </label>
-                    </li>
+                    </span>
+                    <br>
                     {$product_available = $product_available or $sku_available}
                 {/foreach}
-            </ul>
+                <div class="item__strength-info">
+                    <a href="" class="small">Подробнее о прочности валунов...</a>
+                </div>
+            </div>
         {else}
             {* in case there is only one SKU, don't display the selector *}
             
@@ -85,81 +122,60 @@
             
         {/if}
         {/if}
-
-        <!-- price -->
-        <div class="add2cart">
-            {if $product.compare_price > 0}<span class="compare-at-price nowrap"> {shop_currency($product.compare_price)} </span>{/if}
-            <span data-price="{shop_currency($product.price, null, null, 0)}" class="price nowrap">{shop_currency($product.price)}</span>
-            <input type="hidden" name="product_id" value="{$product.id}">
-            <input type="text" name="quantity" value="1">
-            <input type="submit" {if !$product_available}disabled="disabled"{/if} value="[`Add to cart`]">
-        </div>
                    
-    </form>
-        
-    
-    <div class="aux">
-        
-        <div>
-            {$product->features['tip']}<br>
-            {$product->features['diametr']}<br>
-            {$product->features['pokrytie_valuna']}<br>
-        </div>
-        
-        <!-- product features -->
-        {if $product.features}
-            <table class="features" id="product-features">
-                {foreach $product.features as $f_code => $f_value}
-                    <tr>
-                        <td class="name">
-                            {$features[$f_code].name|escape}
-                        </td>
-                        <td class="value" itemprop="{$f_code|escape}">
-                            {if is_array($f_value)}
-                                {implode(', ', $f_value)}
-                            {else}
-                                {$f_value}
-                            {/if}
-                        </td>
-                    </tr>
-                {/foreach}
-            </table>
-        {/if}
 
-        <!-- plugin hook: 'frontend_product.block_aux' -->
-        {* @event frontend_product.%plugin_id%.block_aux *}
-        {foreach $frontend_product as $_}{$_.block_aux}{/foreach}    
-    
-    </div>
-        
+                <div class="item__info-container_custom add2cart">
+                    <label>Кол-во:</label>
+                   <!-- Value -->
+                    <input type="number" name="quantity" value="1" min="1">
+                    <label>шт.</label>
+                </div>
+              
+       </form>    
+              
+              <div class="flex-wrap justify-content item__info-container_sub">
+                <span class="fw-bold">{$wa->block("tip_valuna")}</span>
+                <span>{$product->features['tip']}</span>
+              </div>
+              <hr>
+              <div class="flex-wrap justify-content item__info-container_sub">
+                <div>
+                  <span class="fw-bold">{$wa->block("diametr_valuna")}</span>
+                  <span class="glyphicon glyphicon-question-sign fc-gray small__icon" title="Подробнее"></span>
+                </div>
+                <span>{$product->features['diametr']}</span>
+              </div>
+              <hr>
+              <div class="flex-wrap justify-content item__info-container_sub">
+                <div>
+                  <span class="fw-bold">{$wa->block("pokritie_valune")}</span>
+                  <span class="glyphicon glyphicon-question-sign fc-gray small__icon" title="Подробнее"></span>
+                </div>
+                <span>{$product->features['pokrytie_valuna']}</span>
+              </div>
+              {if $product.description}
+                    <hr>
+                    <div class="item__info-container_sub">
+                        <span class="fw-bold">{$wa->block("opisanie_val")}</span>
+                        <span class="text-justify" id="product-description" itemprop="description" style="position: relative; top: -16px;">
+                        {$product.description}
+                        </span>
+                    </div>
+              {/if}
+        </section>
+    </section>
+
+
+
+
+
+
+
 
     <!-- PRODUCT INFO -->
     <div class="content right300px">
     
         <div class="product-page" id="overview">
-        
-            <!-- image gallery -->
-            <div class="align-center">
-                <!-- main image -->
-                <div class="image">
-                    {if $product.images}
-                    <div class="corner top right">
-                        {$wa->shop->badgeHtml($product.badge)}
-                    </div>
-                    {/if}
-                    {$wa->shop->productImgHtml($product, '750x0', [ 'itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape|cat:' ':strip_tags($product.summary)|escape ])}
-                </div>
-                <!-- gallery -->
-                {if count($product.images) > 1}
-                    <div class="gallery" id="product-gallery">
-                        {foreach $product.images as $image}
-                            <div class="image">                    
-                                <a id="product-image-{$image.id}" href="#">{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '96x96', ['alt' => $product.name|cat:' - ':$image.description|escape])}</a>
-                            </div>
-                        {/foreach}
-                    </div>
-                {/if}
-            </div>
 
 
             <div class="clear-left"></div>
@@ -195,7 +211,7 @@
     
         </div>
     </div>
-</div>
+</section>
 Список
 {if $wa->shop}
 {$products = $wa->shop->productSet({$product->features['id_spiska']})}
@@ -239,3 +255,6 @@
     var sku_features = {json_encode($sku_features_selectable)};
     {/if}
 </script>
+
+
+
