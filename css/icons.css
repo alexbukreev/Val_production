@@ -75,3 +75,6 @@
 .glyphicon-pencil:before {
   content: "\270f";
 }
+.glyphicon-remove-sign:before {
+  content: "\e083";
+}
