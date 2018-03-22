@@ -11,9 +11,6 @@
 .cart__item-tittle {
 	margin: 0 0 6px 3px;
 }
-.cart__prop {
-	flex-grow: 2; /* адаптиролвать под старые браузеры */
-}
 .cart_img {
 	height: 125px;
 	margin-right: 10px;
@@ -22,25 +19,16 @@
 .cart__price {
 	margin: 10px 0 0 10px;
 }
-.cart__form {
-	justify-content: flex-end;  /* адаптиролвать под старые браузеры */
-}
 .cart__form_text {
 	margin-top: 5px;
 }
 .cart__hr {
 	margin: 50px 0 15px 0;
 }
-.cart__action {
-	justify-content: flex-end;  /* адаптиролвать под старые браузеры */
-	align-items: center;
-	text-align: right;
-}
 .cart__discount {
-	margin: 10px 0 0 25px;
+	margin: 10px 0 10px 25px;
 }
 .cart__discount_form {
-	justify-content: flex-end;  /* адаптиролвать под старые браузеры */
 	margin: 10px 0 0 0;
 }
 .cart__sum {
@@ -54,7 +42,6 @@
 }
 .cart__btn {
 	margin: 30px 0 50px 0;
-	justify-content: flex-end;  /* адаптиролвать под старые браузеры */
 }
 .cart__icon-del {
 	position: absolute;

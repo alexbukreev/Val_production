@@ -31,6 +31,9 @@ input[type="number"], input[type="text"] {
 a:active, a:hover {
 	outline:0;
 } 
+a img {
+    border: none; /* Убираем рамку */
+}
 .flex-wrap {
   	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -39,16 +42,40 @@ a:active, a:hover {
   	display: flex;          /* NEW, Spec - Opera 12.1, Firefox 20+ */
  }
 .justify-content {
-	justify-content: space-between; /* адаптиролвать под старые браузеры */
+	-ms-flex-pack: justify;
+	-ms-flex-pack: space-between;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+	justify-content: space-between;
 }
 .justify-content_right {
-	justify-content: flex-end; /* адаптиролвать под старые браузеры */
+	-ms-flex-pack : end;
+	-ms-flex-pack : flex-end
+	-webkit-justify-content: flex-end;
+	-moz-justify-content: end;
+	-ms-justify-content: flex-end;
+	justify-content: flex-end;
 }
 .flex-wrap-wrap {
-	flex-wrap: wrap; /* адаптиролвать под старые браузеры */
+	-webkit-flex-flow: row wrap;
+	-moz-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
 }
 .flex-align-items-baseline {
-	align-items: baseline;  /* адаптиролвать под старые браузеры */
+    -webkit-align-items: baseline;
+	-moz-align-items: baseline;
+	-ms-align-items: baseline;
+	align-items: baseline;
+}
+.flex-align-items-center {
+	-ms-flex-align: center;
+	align-items: center;
+}
+.flex-grow-2 {
+	-ms-flex-positive: 2;
+	-webkit-flex-grow: 2;
+	flex-grow: 2; 
 }
 h1 {
 	font-size: 3.2em;
@@ -179,14 +206,17 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	margin-top: -7px;
 }
 .col_width-001 {
-	width: 33.3%;
+	width: 31.2%;
 }
 .col_width-011 {
-	width: 66.6%;
+	width: 40%;
+}
+.col_width-fixed {
+	max-width: 250px;
 }
 .thumbnail {
 	background-color: #fff;
-	padding: 5px;
+	padding: 1px;
 	margin-bottom: 25px;
 }
 .img-responsive {
@@ -196,7 +226,6 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 }
 .main-title {
 	margin-bottom: 12px;
-	align-items: baseline; /* адаптиролвать под старые браузеры */
 }
 .main-title_h {
 	font-size: 2.0em;

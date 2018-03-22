@@ -5,8 +5,8 @@
 	margin: 6px 12px 0 0;
 }
 .item__info-container {
-	width: 100%;
 	padding-left: 25px;
+	width: 40%;
 }
 .item__info-container_sub {
 	padding: 5px 10px;
@@ -17,7 +17,6 @@
 .item__info-container_price {
 	padding-top: 25px;
 	padding-bottom: 25px;
-	align-items: center; /* адаптиролвать под старые браузеры */
 }
 .item__info-container_custom {
 	border: 0px solid #e0e0e0;
@@ -38,12 +37,12 @@
 	margin: 25px 0 25px 0;
 }
 .item__reviews-box {
-	min-width: 5px;
+	width: 5px;
 	background-color: #e0e0e0;
 }
 .item__reviews-text {
 	padding: 0 0 0 25px;
-	width: 100%;
+	width: 40%;
 }
 .item__strength-info {
 	padding: 0 0 10px 0;
