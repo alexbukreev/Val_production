@@ -1,7 +1,9 @@
 <section class="container flex-wrap justify-content flex-wrap-wrap flex-align-items-center main-title">
   <h1 class="main-title_h">Магазин искусственных валунов</h1>
   <div>
-    <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун</a>  
+    <span class="modal__link" onclick="getModal('modal_choice')">
+      <span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун
+    </span>  
   </div>
 </section>
 <section class="container">
@@ -9,7 +11,11 @@
   <section class="flex-wrap justify-content flex-wrap-wrap market__top-line">
     <div>
     <h5 class="fw-light market__title">
-      <span class="market__sort_padding-right">Диаметр&nbsp;(см):&nbsp;<span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее' data-toggle='modal' data-target='#choose_boulder'></span></span>
+        <span class="market__sort_padding-right">Диаметр&nbsp;(см):
+        <span class="modal__link" onclick="getModal('modal_diametr')">
+            <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее'></span>
+        </span>
+      </span>
     </h5>
     </div>
     <div>
@@ -107,5 +113,7 @@
     </section>
 {/foreach}
 </section>
+<!-- Modal -->
+{include file="modal.html"}
 
 <!-- ленивая загрузка -->

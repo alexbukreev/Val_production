@@ -6,8 +6,8 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
 
-  src: url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot');
-  src: url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot');
+  src: url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.woff') format('woff'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../wa-data/public/site/valunov/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -77,4 +77,7 @@
 }
 .glyphicon-remove-sign:before {
   content: "\e083";
+}
+.glyphicon-user:before {
+  content: "\e008";
 }

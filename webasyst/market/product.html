@@ -6,24 +6,26 @@
 
 <section itemscope itemtype="http://schema.org/Product">
     <!-- tittle -->
-    <section class="container flex-wrap justify-content flex-wrap-wrap main-title">
+    <section class="container flex-wrap justify-content flex-wrap-wrap main-title flex-align-items-center">
         <h1 class="main-title_h">
             <a href="{$wa_app_url}">Магазин</a>
             <span class="glyphicon glyphicon-chevron-right small fc-ultra-gray"></span>
-            <span itemprop="name"></span>{$product.name|escape} <span class="small fc-gray text-lowercase">{$product->features['pokrytie_valuna']}</span></span>
+            <span itemprop="name">{$product.name|escape} <span class="small fc-gray text-lowercase">{$product->features['pokrytie_valuna']}</span></span>
         </h1>
-        <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун</a>
+        <span class="modal__link" onclick="getModal('modal_choice')">
+          <span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун
+        </span> 
     </section>
     
     <!-- image gallery -->
-    <section class="container flex-wrap">
+    <section class="container flex-wrap flex-wrap-wrap">
         <section>
             <div class="item__big-img-container">
                 <!-- main image -->
                 {$wa->shop->productImgHtml($product, '399x0', [ 'itemprop' => 'image', 'id' => 'product-image', 'alt' => $product.name|escape|cat:' ':strip_tags($product.summary)|escape ])}
                     <!-- gallery -->
                 {if count($product.images) > 1}
-                    <div class="flex-wrap" id="product-gallery">
+                    <div class="flex-wrap item__small-img-container" id="product-gallery">
                         {foreach $product.images as $image}
                             <div style="margin: 1px 12px 0 0;">                    
                                 <a id="product-image-{$image.id}" href="#">{$wa->shop->productImgHtml(['id'=> $product.id, 'image_id' => $image.id, 'ext' => $image.ext, 'image_desc' => $image.description], '125x125', ['alt' => $product.name|cat:' - ':$image.description|escape])}</a>
@@ -33,13 +35,13 @@
                 {/if}
             </div>
         </section>
-        <section class="item__info-container">
+        <section class="item__info-container flex-grow-2">
             <hr>
             <!-- add to cart -->
             <form id="cart-form" method="post" action="{$wa->getUrl('/frontendCart/add')}">
                 
                 <!-- price -->
-                <div class="flex-wrap flex-wrap-wrap justify-content item__info-container_sub item__info-container_price add2cart">
+                <div class="flex-wrap flex-wrap-wrap justify-content flex-align-items-center item__info-container_sub item__info-container_price add2cart">
                     <h3 class="item__info-container_marging price nowrap"  data-price="{shop_currency($product.price, null, null, 0)}">{shop_currency($product.price)}</h3>
                     <button type="submit" value="[`Add to cart`]" class="btn btn_buy btn_large">[`Add to cart`]</button>
                 </div>
@@ -88,7 +90,9 @@
                     {$product_available = $product_available or $sku_available}
                 {/foreach}
                 <div class="item__strength-info">
-                    <a href="" class="small">Подробнее о прочности валунов</a>
+                    <span class="modal__link small" onclick="getModal('modal_strength')">
+                        Подробнее о прочности валунов
+                    </span>
                 </div>
             </div>
         {else}
@@ -132,7 +136,9 @@
               <div class="flex-wrap justify-content item__info-container_sub">
                 <div>
                   <span class="fw-bold">{$wa->block("diametr_valuna")}</span>
-                  <span class="glyphicon glyphicon-question-sign fc-gray small__icon" title="Подробнее"></span>
+                    <span class="modal__link" onclick="getModal('modal_diametr')">
+                        <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее'></span>
+                    </span>
                 </div>
                 <span>{$product->features['diametr']}</span>
               </div>
@@ -140,7 +146,9 @@
               <div class="flex-wrap justify-content item__info-container_sub">
                 <div>
                   <span class="fw-bold">{$wa->block("pokritie_valune")}</span>
-                  <span class="glyphicon glyphicon-question-sign fc-gray small__icon" title="Подробнее"></span>
+                    <span class="modal__link" onclick="getModal('modal_textura')">
+                        <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее'></span>
+                    </span>
                 </div>
                 <span>{$product->features['pokrytie_valuna']}</span>
               </div>
@@ -148,9 +156,9 @@
                     <hr>
                     <div class="item__info-container_sub">
                         <span class="fw-bold">{$wa->block("opisanie_val")}</span>
-                        <span class="text-justify" id="product-description" itemprop="description" style="position: relative; top: -16px;">
+                        <div class="text-justify" id="product-description" itemprop="description" style="position: relative; top: -16px;">
                         {$product.description}
-                        </span>
+                        </div>
                     </div>
               {/if}
         </section>
@@ -158,9 +166,11 @@
 
 
 {if $wa->shop}
-    <section class="container flex-wrap justify-content flex-wrap-wrap main-title item__textures">
+    <section class="container flex-wrap justify-content flex-wrap-wrap flex-align-items-center main-title item__textures">
         <h1 class="main-title_h"><span class="small fc-gray">Варианты покрытия для этой модели валуна:</span></h1>
-        <a href=""><span class="glyphicon glyphicon-info-sign"></span>&nbsp;подробнее&nbsp;о&nbsp;покрытии&nbsp;валунов</a>
+        <span class="modal__link" onclick="getModal('modal_textura')">
+          <span class="glyphicon glyphicon-info-sign"></span>&nbsp;подробнее&nbsp;о&nbsp;покрытии&nbsp;валунов
+        </span>
     </section>
     <section class="container margin-bottom_10">
         <hr>
@@ -171,19 +181,21 @@
 
 <!-- reviews -->
 <section class="container">
-        <section class="flex-wrap flex-wrap-wrap justify-content item__reviews">
-          <span class="item__reviews-font fw-bold">Отзывы:</span>
+        <section class="flex-wrap justify-content flex-wrap-wrap flex-align-items-center item__reviews">
+          <div class="item__reviews-font fw-bold">Отзывы:</div>
           <span>{sprintf('[`<a href="%s"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Оставить отзыв</a>`]', 'reviews/')}</span>
         </section>
         {foreach $reviews as $review}
         <hr>
-        <span data-id={$review.id} data-parent-id="0">
+        <section data-id={$review.id} data-parent-id="0">
             {include file="review.html" reply_allowed=false inline}
-        </span>
+        </section>
         {/foreach}
       </section>
 </section>
 
+<!-- Modal -->
+{include file="modal.html"}
 
 
 
@@ -197,6 +209,3 @@
     var sku_features = {json_encode($sku_features_selectable)};
     {/if}
 </script>
-
-
-

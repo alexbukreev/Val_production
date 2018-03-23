@@ -2,25 +2,25 @@
 
 {if !empty($ajax_append)}<li data-id={$review.id} data-parent-id="{$review.parent_id}">{/if}
 
-<section class="flex-wrap item__reviews-body">
+<section class="flex-wrap flex-wrap-wrap item__reviews-body">
     <div class="item__reviews-box"></div>
-    <div class="item__reviews-text" itemprop="review" itemscope itemtype="http://schema.org/Review">
+    <div class="flex-grow-2 item__reviews-text" itemprop="review" itemscope itemtype="http://schema.org/Review">
         
-        <div class="flex-wrap flex-wrap-wrap justify-content flex-align-items-baseline">
-            <div>
-               <span class="fw-bold" itemprop="name">{if $review.title}{$review.title}{/if}</span>
+        <section class="flex-wrap flex-wrap-wrap justify-content flex-align-items-baseline">
+            <div class="fw-bold" itemprop="name">
+                {if $review.title}{$review.title}{/if}
                 [`By`]
-                {if empty($review.site)}
-                    <span class="small" itemprop="author">|&nbsp;{$review.author.name}</span>
+             {if empty($review.site)}
+                <span class="small" itemprop="author">|&nbsp;{$review.author.name}</span>
                 {else}
-                    <a href="{$review.site}" class="small" itemprop="author">{$review.author.name}</a>
-                {/if} 
+                <a href="{$review.site}" class="small" itemprop="author">{$review.author.name}</a>
+             {/if} 
             </div>
             <div>
                 <meta itemprop="datePublished" content="{$review.datetime|date_format:'Y-m-d'}">
                 <span class="small" title="{$review.datetime|wa_datetime}">{$review.datetime|wa_datetime:"humandatetime"}</span>
             </div>
-        </div>
+        </section>
         
         {if $review.text}
             <p itemprop="description">{$review.text}</p>

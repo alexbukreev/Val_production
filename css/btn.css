@@ -12,9 +12,14 @@ button:focus {
     outline: none !important;
 }
 .btn_large {
-  padding: 12px 25px;
+  padding: 12px 22px !important;
   font-size: 1.1em !important;
-  border-radius: 25px;
+  border-radius: 25px !important;
+}
+.btn_small {
+  padding: 9px 16px !important;
+  font-size: 0.7em !important;
+  border-radius: 18px !important;
 }
 .btn {
   display: inline-block;
@@ -169,6 +174,54 @@ fieldset[disabled] .btn_buy:focus,
 fieldset[disabled] .btn_buy.focus {
   background-color: #aed581;
   /*border-color: #4cae4c;*/
+}
+/* btn_def */
+.btn_def {
+  color:#757575 !important;
+  background-color: #fff;
+  border-color: #e0e0e0;
+}
+.btn_def:focus,
+.btn_def.focus {
+  color:#757575 !important;
+  background-color: #f5f5f5;
+  border-color: #e0e0e0;
+}
+.btn_def:hover {
+  color:#757575;
+  background-color: #f5f5f5;
+  border-color: #e0e0e0;
+}
+.btn_def:active {
+  color:#757575 !important;
+  background-color: #f5f5f5;
+  border-color: #e0e0e0;
+  background-image: none;
+}
+.btn_def:active:hover,
+.btn_def.active:hover,
+.open > .dropdown-toggle.btn_def:hover,
+.btn_def:active:focus,
+.btn_def.active:focus,
+.open > .dropdown-toggle.btn_def:focus,
+.btn_def:active.focus,
+.btn_def.active.focus,
+.open > .dropdown-toggle.btn_def.focus {
+  color:#757575 !important;
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+.btn_def.disabled:hover,
+.btn_def[disabled]:hover,
+fieldset[disabled] .btn_def:hover,
+.btn_def.disabled:focus,
+.btn_def[disabled]:focus,
+fieldset[disabled] .btn_def:focus,
+.btn_def.disabled.focus,
+.btn_def[disabled].focus,
+fieldset[disabled] .btn_def.focus {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
 }
 
 /* Social btn */

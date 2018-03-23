@@ -3,7 +3,7 @@
   <section class="footer_questions">
     <div class="container">
       <h3 class="landing__title-marging fw-light" >Остались вопросы?</h3>
-      <a data-toggle="modal" data-target="#connectionForm" class="btn btn_info" role="button">Свяжитесь с нами</a>
+      <a href="http://art-eco.ru/valunov/connection.html" class="btn btn_info">Свяжитесь с нами</a>
     </div><!-- Остались вопросы? -->
   </section>
   <section class="footer_info">

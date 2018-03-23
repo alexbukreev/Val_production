@@ -126,6 +126,9 @@ hr {
 .small {
 	font-size: 0.8em;
 }
+.normal {
+	font-size: 1em;
+}
 .middle {
 	font-size: 0.9em;
 }
@@ -155,6 +158,9 @@ hr {
 }
 .fc-withe {
 	color:#ffffff;
+}
+.fc-bay {
+	color:#8bc34a;
 }
 .text-lowercase {
 	text-transform: lowercase;

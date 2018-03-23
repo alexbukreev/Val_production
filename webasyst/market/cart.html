@@ -1,135 +1,100 @@
+<link href="/wa-data/public/site/valunov/css/cart.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="{$wa_theme_url}cart.js"></script>
+{include file="nav_top_clear.html"}
 
-{if !$cart.count}
+<section class="container main-title" style="margin-bottom: 23px;">
+    <h1 class="main-title_h">
+      Корзина
+    </h1>
+    {if !$cart.count}
+        <p>[`Your shopping cart is empty.`]</p>
+    {else}
+</section>
 
-    <h1>[`Shopping cart`]</h1>
-    <p>[`Your shopping cart is empty.`]</p>
-
-{else}
-
-    {$crossselling = $wa->shop->crossSelling($cart.items, 'product_id')}
-
-    <!-- general welcome text -->
-    <div class="content right300px">
-    
-        <h1>[`Shopping cart`]</h1>
-    
-        <form method="post">
-            <table class="table cart">
-                <!-- products -->
-                {foreach $cart.items as $item}
-                    <tr data-id="{$item.id}">
-                        <td class="min-width"><a href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">{$wa->shop->productImgHtml($item.product, '48x48')}</a></td>
-                        <td>
-                            <a href="{$wa->shop->productUrl($item.product)}" class="bold">{$item.product.name|escape}</a>
-                            {if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{/if}
-                            
-                            
-                            
-                            ddd
-                            
-                            {$p = $wa->shop->product($item.product)}
-                            
-                            
-                            {$p.features['pokrytie_valuna']}
-                            {$p.features['diametr']}
-                            
-                             
-
-                            
-                            
-                            <br /><br />
-                            
-                            {if !empty($item.services)}
-                            <div class="services">
-                                {foreach $item.services as $service_id => $s}
-                                <!-- one option -->
-                                <div {if !empty($s.id)}data-id="{$s.id}"{/if}>
-                                <label>
-                                    <input {if !empty($s.id)}checked{/if} type="checkbox" name="services[{$item.id}][]" value="{$service_id}"> {$s.name|escape} {if $s.price && !isset($s.variants)}(<span>+{shop_currency($s.price, $s.currency)}</span>){/if}
-                                </label>
-                                {if isset($s.variants)}
-                                <select name="service_variant[{$item.id}][{$service_id}]" {if empty($s.id)}disabled{/if}>
-                                    {foreach $s.variants as $variant_id => $v}
-                                    <option {if $s.variant_id == $variant_id}selected{/if} value="{$variant_id}">{$v.name|escape} (+{shop_currency($v.price, $s.currency)})</option>
-                                    {/foreach}
-                                </select>
-                                {/if}
-                                </div>
-                                {/foreach}
-
-                            </div>
-                            {/if}
-                            {if !empty($item.error)}<script>alert('{$item.error|escape}');</script>{/if}
-                        </td>
-                        <td class="align-center nowrap"><span class="gray">&times;</span> <input type="text" name="quantity[{$item.id}]" value="{$item.quantity}" class="qty{if !empty($item.error)} error{/if}"></td>
-                        <td class="align-center item-total nowrap">{shop_currency($item.full_price, true)}</td>
-                        <td><a class="delete" href="#" title="[`Remove from cart`]"><i class="icon16 remove">del</i></a></td>
-                    </tr>
-                {/foreach}
-                
-                <!-- discount coupon -->
-                <tr class="no-border" {if !shopDiscounts::isEnabled('coupons') && !$discount}style="display:none"{/if}>
-                    <td colspan="2" class="no-border">
+<form method="post">
+    <table class="table cart" style="width: 100%; border-collapse: collapse;">
+    <!-- products -->
+        {foreach $cart.items as $item}
+        <tr data-id="{$item.id}">
+            <td>
+                <section class="container cart__container">
+                    <section class="flex-wrap flex-wrap-wrap cart__item-container">
+                      <a class="cart_img" href="{$wa->shop->productUrl($item.product)}" title="{$item.product.name|escape}">{$wa->shop->productImgHtml($item.product, '125x125')}</a>
+                      <section class="flex-grow-2">
+                        <h5 class="cart__item-tittle"><a href="{$wa->shop->productUrl($item.product)}">{$item.product.name|escape}</a></h5>
+                        <hr>
+                        {$p = $wa->shop->product($item.product)}
+                        <div class="flex-wrap justify-content small market__item-prop">
+                          <div class="fw-bold">{$wa->block("diametr_valuna")}&nbsp;</div>
+                          <div>{$p.features['diametr']}</div>
+                        </div>
+                        <hr>
+                        <div class="flex-wrap justify-content small market__item-prop">
+                          <div class="fw-bold">{$wa->block("pokritie_valune")}&nbsp;</div>
+                          <div>{$p.features['pokrytie_valuna']}</div>
+                        </div>
+                        <hr>
+                        <div class="flex-wrap justify-content small market__item-prop">
+                          <div class="fw-bold">{$wa->block("prochnost_valuna")}&nbsp;</div>
+                          <div>{if $item.sku_name && $item.sku_name != $item.product.name}{$item.sku_name|escape}{/if}</div>
+                        </div>
+                        <hr>
+                        <div class="flex-wrap justify-content small market__item-prop">
+                          <div class="fw-bold">Цена за шт.:&nbsp;</div>
+                          <div class="item__info-container_marging price nowrap"  data-price="{shop_currency($p.price, null, null, 0)}">{shop_currency($p.price)}</div>
+                        </div>
+                        <a class="delete" href="#" title="[`Remove from cart`]"><span class='glyphicon glyphicon glyphicon-remove-sign cart__icon-del remove'></span></a>
+                      </section>
+                      {if !empty($item.error)}<script>alert('{$item.error|escape}');</script>{/if}
+                    </section>
+                    <section class="flex-wrap flex-wrap-wrap justify-content_right">
+                      <div class="cart__form_text ">
+                        <label class="small">Кол-во:&nbsp;</label>
+                        <input type="number" name="quantity[{$item.id}]" value="{$item.quantity}" min="1" class="qty{if !empty($item.error)} error{/if}">
+                        <label class="small">&nbsp;шт.</label>
+                      </div>
+                      <h5 class="cart__price item-total nowrap">{shop_currency($item.full_price, true)}</h5>
+                    </section> 
+                </section>
+            </td>
+        </tr>
+        {/foreach}
+        <!-- discount coupon -->
+        <tr {if !shopDiscounts::isEnabled('coupons') && !$discount}style="display:none"{/if}>
+            <td>
+                <section class="container">
+                    <hr class="cart__hr">
+                    
+                    <section class="flex-wrap flex-wrap-wrap justify-content_right flex-align-items-center">
                         {if shopDiscounts::isEnabled('coupons')}
-                        [`Discount coupon (if you have one)`]:
-                        <input type="text" name="coupon_code" value="{$coupon_code|escape}"> <input type="submit"  value="[`Apply`]">
+                        <div class="small" style="margin-top: 10px;">
+                            <label>[`Discount coupon (if you have one)`]:
+                        </div>
+                        <div style="margin-top: 10px;">
+                            &nbsp;<input type="text" name="coupon_code" value="{$coupon_code|escape}"> 
+                            &nbsp;<button type="submit"  value="[`Apply`]">Применить</button>
+                        </div>
                         {/if}
-                    </td>
-                    <td class="align-center">[`Discount`]</td>
-                    <td class="align-center cart-discount nowrap">&minus; {shop_currency($discount, true)}</td>
-                    <td>&nbsp;</td>
-                </tr>
-
-                {if shopAffiliate::isEnabled() && $affiliate_bonus > 0}
-                <!-- affiliate bonus -->
-                <tr class="no-border">
-                    <td colspan="3" class="no-border">
-                        {sprintf('[`Your current affiliate bonus of %s points allows you to get an additonal discount of up to %s`]', $affiliate_bonus, shop_currency(shopAffiliate::convertBonus($affiliate_bonus)))}
-                        {if $use_affiliate}
-                        <a id="cancel-affiliate" href="#">[`Cancel`]</a>
-                        {else}
-                        <input type="submit" name="use_affiliate" value="[`Use bonus`]">
-                        {/if}
-                    </td>
-                    <td class="align-center">&minus; {if $use_affiliate}{shop_currency(shopAffiliate::convertBonus($used_affiliate_bonus))}{else}0{/if}</td>
-                    <td>&nbsp;</td>
-                </tr>
-                {/if}
-                
-                <!-- TOTAL -->
-                <tr class="large no-border">
-                    <td colspan="3">[`Total`]</td>
-                    <td class="cart-total align-center total bold nowrap">{shop_currency($cart.total, true)}</td>
-                    <td>&nbsp;</td>
-                </tr>
-                
-                <!-- checkout -->
-                <tr class="no-border">
-                    <td colspan="3">
-                        <span class="gray">&larr;</span> <a href="{$wa_app_url}" class="gray">[`Back to the store`]</a>
-
-                        {if !empty($add_affiliate_bonus)}
-                        <em class="affiliate float-right">{sprintf("[`This order will add +%s points to your affiliate bonus.`]", $add_affiliate_bonus)}</em>
-                        {/if}
-                        
-                    </td>
-                    <td class="align-center bold">
-                        <input name="checkout" type="submit" value="[`Proceed to checkout`]" class="button large">
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                
-                
-                
-            </table>
-
-            <!-- plugin hook: 'frontend_cart' -->
-            {* @event frontend_cart.%plugin_id% *}
-            {foreach $frontend_cart as $_}{$_}{/foreach}                    
-
-        </form>
-        
-    </div>
+                        <h5 class="cart__discount cart-discount nowrap">[`Discount`]&nbsp;&minus; {shop_currency($discount, true)}</h5>
+                    </section>
+                    
+                    <section class="cart__sum">
+                      <section class="flex-wrap flex-wrap-wrap justify-content_right flex-align-items-center cart__sum_color">
+                        <h4 class="cart__sum_text">Итого<span class="asterisk">*</span>:&nbsp;</h4>
+                        <h3 class="cart-total cart__sum_text">{shop_currency($cart.total, true)}</h3>
+                      </section>
+                      <section class="cart__asterisk">
+                        <span class="asterisk">*&nbsp;</span><span class="small">Стоимость заказа расчитана без учета <a href="{$wa_url}valunov/service.html">доставки</a>.</span>
+                      </section>
+                    </section>
+            
+                    <section class="flex-wrap justify-content_right cart__btn">
+                      <button name="checkout" type="submit" value="[`Proceed to checkout`]" class="btn btn_buy btn_large">Оформить заказ</button>
+                    </section>
+                </section>
+            </td>
+        </tr>    
+    </table>
+</form>
 
 {/if}
