@@ -21,6 +21,12 @@ button:focus {
   font-size: 0.7em !important;
   border-radius: 18px !important;
 }
+.btn_mini {
+  padding: 5px 9px !important;
+  font-size: 0.7em !important;
+  border-radius: 12px !important;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.15) !important;
+}
 .btn {
   display: inline-block;
   padding: 12px 20px 11px 20px;

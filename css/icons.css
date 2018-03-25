@@ -81,3 +81,6 @@
 .glyphicon-user:before {
   content: "\e008";
 }
+.glyphicon-filter:before {
+  content: "\e138";
+}

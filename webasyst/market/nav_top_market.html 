@@ -1,6 +1,7 @@
 <input id="navbar-top__checkbox" type="checkbox" name="navbar-top__checkbox">
 <nav id="navbar-top" class="navbar-top">
 <section class="flex-wrap justify-content">
+    
   <div id = "navbar-top__burger" class="navbar-top__burger">
     <label for="navbar-top__checkbox" class="glyphicon glyphicon-menu-hamburger"></label>
   </div>
@@ -22,7 +23,14 @@
     <li>
       <a href="{$wa->getUrl('/frontend/cart')}">
         <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>&nbsp;&nbsp;Корзина&nbsp;
-        <span class="navbar-top__badge">88</span>
+        
+        
+        
+         <!-- cart summary -->
+        {$cart_total = $wa->shop->cart->total()}
+        <soan class="cart{if !$cart_total} empty{/if}" id="cart-summary">
+            <span class="navbar-top__badge cart-total">{shop_currency($cart_total, true)}</span>
+        </span>
       </a>
     </li>
     {if $wa->isAuthEnabled()}
@@ -55,3 +63,4 @@
   </a>
 </section>
 </nav>
+

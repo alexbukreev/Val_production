@@ -20,14 +20,17 @@
 	cursor: pointer;
 	color: #03a9f4;
 }
-.market__sort_padding-left {
-	padding-left: 1em;
+.market__sort:hover {
+	color: #0288d1;
 }
 .market__sort_padding-right {
 	padding-right: 1em;
 }
 .market__sort_marging-bottom {
-	margin-bottom: 10px;
+	margin-bottom: 8px;
+}
+.market__sort_marging-top {
+	margin-top: 5px;
 }
 .market__item {
 	min-height: 300px;
@@ -46,6 +49,9 @@
 }
 .market__item-prop {
 	margin: 0 3px;
+}
+.market__filter-btn {
+	margin: 10px 0 5px 0;
 }
 @media (max-width: 1099px) {
 	.market__container {

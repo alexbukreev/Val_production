@@ -19,8 +19,16 @@ function hideTopSubMunu(margingTop, id1, id2, visibleClass) {
 // modal 
 var modalId;
 function getModal(id) {
-	modalId = id;
-	
+	switch(id) {
+		case 31:
+			modalId = 'modal_textura';
+		break;
+		case 30:
+			modalId = 'modal_diametr';
+		break;
+		default: modalId = id;
+	}
+
 	var MAIN_MODAL = document.getElementById('main-modal');
 	MAIN_MODAL.classList.toggle('display-none');
 

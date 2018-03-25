@@ -131,7 +131,7 @@ input[name="navbar-top__checkbox"] {
 a.navbar-top__bottom_light-link:link,
 a.navbar-top__bottom_light-link:active,
 a.navbar-top__bottom_light-link:visited {
-	color: #999;
+	color: #e0e0e0;
 	text-decoration: none;
 }
 a.navbar-top__bottom_light-link:hover {

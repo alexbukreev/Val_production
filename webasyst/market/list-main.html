@@ -1,73 +1,24 @@
-<section class="container flex-wrap justify-content flex-wrap-wrap flex-align-items-center main-title">
-  <h1 class="main-title_h">Магазин искусственных валунов</h1>
-  <div>
-    <span class="modal__link" onclick="getModal('modal_choice')">
-      <span class="glyphicon glyphicon-info-sign"></span>&nbsp;как выбрать валун
-    </span>  
-  </div>
-</section>
 <section class="container">
-  <hr>
-  <section class="flex-wrap justify-content flex-wrap-wrap market__top-line">
+  <section class="flex-wrap justify-content flex-wrap-wrap flex-align-items-baseline">
     <div>
-    <h5 class="fw-light market__title">
-        <span class="market__sort_padding-right">Диаметр&nbsp;(см):
-        <span class="modal__link" onclick="getModal('modal_diametr')">
-            <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее'></span>
-        </span>
-      </span>
-    </h5>
+      <span class="market__sort_padding-right middle">Товаров&nbsp;в&nbsp;магазне:&nbsp;<span class="fw-bolder">{$wa->shop->productsCount("")}</span></span>
+    </div> 
+    <div>
+        {if !empty($sorting)}
+            <!-- sorting -->
+            {$sort_fields = ['price' => '<span class="market__sort middle">сортировать&nbsp;по&nbsp;цене&nbsp;<span class="glyphicon glyphicon glyphicon-sort-by-attributes"></span></span>']}</span>
+                {foreach $sort_fields as $sort => $name}
+                    {$wa->shop->sortUrl($sort, $name)}
+                {/foreach}
+        {/if}
     </div>
-    <div>
-      <span class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox1' value='option1'>&nbsp;30&nbsp;&nbsp;
-      </span>
-      <span class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox2' value='option2'>&nbsp;50&nbsp;&nbsp;
-      </span>
-      <span class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;75&nbsp;&nbsp;
-      </span>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;80&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;90&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;100&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;120&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;140&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;170&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3'>&nbsp;на&nbsp;газгольдер&nbsp;&nbsp;
-      </label>
-      <label class='checkbox-inline fw-bolder'>
-        <input type='checkbox' id='inlineCheckbox3' value='option3' checked=''>&nbsp;все
-      </label>
-    </div> 
-  </section>
-  <hr>
-  <section class="flex-wrap justify-content_right flex-wrap-wrap market__top-line flex-align-items-baseline market__sort_marging-bottom">
-    <span class="market__sort_padding-left">Сортировать&nbsp;по:</span>
-    <a class="market__sort market__sort_padding-left">по&nbsp;цене&nbsp;<span class="glyphicon glyphicon glyphicon-sort-by-attributes"></span></a>
-    <a class="market__sort market__sort_padding-left">по&nbsp;покрытию&nbsp;<span class="glyphicon glyphicon glyphicon-sort-by-attributes"></span></a>
-    <div>
-      <span class="market__sort_padding-left">Всего товаров:&nbsp;<span class="fw-bolder">120</span></span>
-    </div> 
   </section>
 </section>
 
-<section class="market__container flex-wrap justify-content flex-wrap-wrap">
+
+<section class="market__container flex-wrap justify-content flex-wrap-wrap product-list">
 {foreach $products as $p}
-    <section itemscope itemtype ="http://schema.org/Product">
+    <li itemscope itemtype ="http://schema.org/Product" style="display: block;">
         <!-- image -->
         <div class="market__item">
             <a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &mdash; {strip_tags($p.summary)}{/if}">
@@ -110,9 +61,9 @@
                 {/if}
             </div>
         </div>
-    </section>
+    </li>
 {/foreach}
-</section>
+
 <!-- Modal -->
 {include file="modal.html"}
 

@@ -13,9 +13,20 @@
 {$category = $wa->shop->category(856)}
 {$products = $wa->shop->products("category/`$category.id`")}
 
-<div class="content">
-    <div id="product-list">
-    {include file='list-main.html' sorting=!empty($category.params.enable_sorting)}
-    </div>
-</div>
+
+    
+    {if !$products}
+    {if !empty($filters)}
+        [`No products were found.`]
+    {else}
+        [`This category does not contain any products.`]
+    {/if}
+    {else}
+        <div id="product-list">
+        {include file='list-main.html' sorting=!empty($category.params.enable_sorting)}
+        </div>
+    {/if}
+    
+
+
 
