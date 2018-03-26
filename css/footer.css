@@ -3,7 +3,7 @@ developer: Alexander Bukreev, 2018
 e-mail: alexander.v.bukreev@gmail.com
 */
 .footer_questions { /* Секция вопросов в конце страниц */
-	padding: 25px 0 100px 0;
+	padding: 0px 0 50px 0;
 }
 .footer_info {
   	background-color: #000;

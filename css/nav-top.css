@@ -25,7 +25,7 @@ e-mail: alexander.v.bukreev@gmail.com
 .navbar-top__brand {
 	display: inline-block;
 	padding: 0;
-  	margin: 7px 10px 0 21px;
+  	margin: 5px 10px 0 8px;
   	font-size: 1.6em;
   	line-height:0.8;
   	/*background-color: grey;*/
@@ -87,17 +87,20 @@ e-mail: alexander.v.bukreev@gmail.com
   background-color: #ED1C24;
 }
 .navbar-top__btn {
-	height: 17px;
-	margin: 5px 19px 0 0;
+	padding: 9px 14px 9px 16px !important;
+  	font-size: 0.7em !important;
+  	border-radius: 18px !important;
+	height: 15px;
+	margin: 9px 8px 0 0;
 }
 .navbar-top__btn:after {
 	content: "Выбрать валун";
 }
 .navbar-top__btn-ico {
 	display: none;
-	font-size: 1.5em;
-	line-height: 0.9;
-	margin-top: -10px;
+	font-size: 1.4em;
+	line-height: 0;
+	/*margin-top: 100px !important;*/
 }
 .navbar-top__burger {
 	display: none;
@@ -176,7 +179,7 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		font-size: 0.5em;
 	}
 	.navbar-top__brand {
-	  	margin: 11px 10px 0 21px;
+	  	margin: 10px 10px 0 8px;
 	  	line-height:0.7;
 	}
 	.navbar-top__phone {
@@ -248,7 +251,7 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		display: none;
 	}
 	.navbar-top__btn {
-		margin: 5px 10px 0 0;
+		margin: 9px 8px 0 0;
 	}
 	.navbar-top__special {
 		display: inline-block;
@@ -342,6 +345,6 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		display: inline;
 	}
 	.navbar-top__btn {
-		padding: 10px 11px 14px 11px !important;
+		padding: 8px 8px 10px 8px !important;
 	}
 }

@@ -2,16 +2,19 @@
 // e-mail: alexander.v.bukreev@gmail.com
 
 // Прокрутка окна
-window.onscroll = function() {hideTopSubMunu(35, 'navbar-top__burger', 'navbar-top__checkbox', 'visible-block')};
+window.onscroll = function() {hideTopSubMunu(35, 'navbar-top__burger', 'navbar-top__checkbox', 'btn__top-id', 'visible-block')};
 // прячем меню в бургер при прокрутке вверх
-function hideTopSubMunu(margingTop, id1, id2, visibleClass) {
+function hideTopSubMunu(margingTop, id1, id2, id3, visibleClass) {
 	var navbarTopBurger = document.getElementById(id1);
 	var navbarTopChekcbox = document.getElementById(id2);
+	var btnTopId = document.getElementById(id3);
 	// показываем и скрываем бургер
     if (document.body.scrollTop > margingTop || document.documentElement.scrollTop > margingTop) {
         navbarTopBurger.classList.add(visibleClass);
+        btnTopId.classList.remove('visible-none');
     } else {
         navbarTopBurger.classList.remove(visibleClass);
+        btnTopId.classList.add('visible-none');
         navbarTopChekcbox.checked = false;
     }
 }
@@ -19,8 +22,10 @@ function hideTopSubMunu(margingTop, id1, id2, visibleClass) {
 // разделение на разряды в сумме на сайте
 cartTotal('cart-total');
 function cartTotal(id) {
-	var htmlElem = document.getElementById(id)
-	htmlElem.innerHTML = htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
+	var htmlElem = document.getElementById(id);
+	if (htmlElem) {
+		htmlElem.innerHTML = htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
+	}
 }
 
 // modal 
@@ -50,9 +55,7 @@ function closeBtn() {
 	var visibleBlock = document.getElementById(modalId);
 	visibleBlock.classList.toggle('display-none');
 }
-/*
-window.onclick = function(event) {
-    MAIN_MODAL = document.getElementById('main-modal');
-    MAIN_MODAL.classList.toggle('display-none');
+
+function scrollOnTop() {
+	window.scrollTo(0,0);
 }
-*/

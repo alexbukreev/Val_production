@@ -29,7 +29,7 @@ button:focus {
 }
 .btn {
   display: inline-block;
-  padding: 12px 20px 11px 20px;
+  padding: 12px 19px 11px 20px;
   margin-bottom: 0;
   font-size: 0.8em;
   color: #fff !important;
@@ -228,6 +228,30 @@ fieldset[disabled] .btn_def:focus,
 fieldset[disabled] .btn_def.focus {
   background-color: #e0e0e0;
   border-color: #e0e0e0;
+}
+/* top btn */
+.btn__top {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 40px;
+  background-color:#fff; /*для Firefox, Opera, Safari*/
+  border:0px none;
+  border-radius: 25px;
+  opacity: 0.2;
+  cursor: pointer;
+}
+.btn__top:hover {
+  opacity: 0.5;
+}
+.btn__top_ico {
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 1px;
 }
 
 /* Social btn */

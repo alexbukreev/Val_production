@@ -34,6 +34,9 @@ a:active, a:hover {
 a img {
     border: none; /* Убираем рамку */
 }
+p {
+	margin-bottom: 1.8em;
+}
 .flex-wrap {
   	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
   	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -168,6 +171,10 @@ hr {
 .text-lowercase {
 	text-transform: lowercase;
 }
+.sub-link {
+	display: none;
+	margin-right: 1em;
+}
 a:link .fc_dark,
 a:active .fc_dark,
 a:visited .fc_dark {
@@ -191,6 +198,9 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 }
 .visible-block {
 	display: block !important;
+}
+.visible-none {
+	display: none !important;
 }
 .container {
   padding-right: 15px;
@@ -241,6 +251,14 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 	padding-right: 1em;
 	margin: 0 0 10px 0;
 }
+.second-title {
+	margin-top: 22px;
+	margin-bottom: 0;
+}
+.second-title_h {
+	margin-top: 1.8em;
+	margin-bottom: 1.8em;
+}
 .radio-inline,
 .checkbox-inline {
 	position: relative;
@@ -260,6 +278,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 .asterisk {
 	color: #ED1C24;
 }
+
 @media (max-width: 1099px) {
 	.container {
 		width: 1000px;
@@ -273,6 +292,19 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
 @media (max-width: 949px) {
 	.container {
 		width: 770px;
+	}
+	.col_dirertion {
+		flex-direction: column;
+	}
+	.col_mrg-right,
+	.col_mrg-left {
+		margin: 0;
+	}
+	.col_width-001 {
+		width: 100%;
+	}
+	.sub-link {
+		display: inline;
 	}
 }
 @media (max-width: 799px) {
