@@ -28,7 +28,7 @@
         
          <!-- cart summary -->
         {$cart_total = $wa->shop->cart->total()}
-        <soan class="cart{if !$cart_total} empty{/if}" id="cart-summary">
+        <span class="cart{if !$cart_total} empty{/if}" id="cart-summary">
             <span class="navbar-top__badge cart-total">{shop_currency($cart_total, true)}</span>
         </span>
       </a>

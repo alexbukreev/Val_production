@@ -16,6 +16,13 @@ function hideTopSubMunu(margingTop, id1, id2, visibleClass) {
     }
 }
 
+// разделение на разряды в сумме на сайте
+cartTotal('cart-total');
+function cartTotal(id) {
+	var htmlElem = document.getElementById(id)
+	htmlElem.innerHTML = htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
+}
+
 // modal 
 var modalId;
 function getModal(id) {

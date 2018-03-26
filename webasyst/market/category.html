@@ -57,9 +57,25 @@
     
     {if !$products}
     {if !empty($filters)}
-        [`No products were found.`]
+        <section class="container">
+            <div>
+              <span class="market__sort_padding-right middle">Товаров&nbsp;в&nbsp;магазне:&nbsp;<span class="fw-bolder">{$wa->shop->productsCount("")}</span></span>
+            </div> 
+            <br>
+            По условиям фильтрации не найдено ни одного товара. 
+            <br>
+            Попробуйте выбрать другие условия или <a href="{$wa_app_url}category/valun/">сбросьте все фильтры</a>.
+            <br><br>
+        </section>
     {else}
-        [`This category does not contain any products.`]
+        <section class="container">
+            <div>
+              <span class="market__sort_padding-right middle">Товаров&nbsp;в&nbsp;магазне:&nbsp;<span class="fw-bolder">{$wa->shop->productsCount("")}</span></span>
+            </div> 
+            <br>
+            [`This category does not contain any products.`]
+            <br><br>
+        </section>
     {/if}
     {else}
         <div id="product-list">

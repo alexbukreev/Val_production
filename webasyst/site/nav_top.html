@@ -21,7 +21,9 @@
       <li>
         <a href="http://art-eco.ru/market/cart/">
           <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>&nbsp;&nbsp;Корзина&nbsp;
-          <span class="navbar-top__badge">88</span>
+          
+          <span id="cart-total" class="navbar-top__badge" data-total="{$wa->shop->cart->total()}"></span>
+          
         </a>
       </li>
     </ul>

@@ -8,7 +8,7 @@
     <!-- tittle -->
     <section class="container flex-wrap justify-content flex-wrap-wrap main-title flex-align-items-center">
         <h1 class="main-title_h">
-            <a href="{$wa_app_url}">Магазин</a>
+            <a href="{$wa_app_url}category/valun/">Магазин</a>
             <span class="glyphicon glyphicon-chevron-right small fc-ultra-gray"></span>
             <span itemprop="name">{$product.name|escape} <span class="small fc-gray text-lowercase">{$product->features['pokrytie_valuna']}</span></span>
         </h1>
@@ -35,7 +35,7 @@
                 {/if}
             </div>
         </section>
-        <section class="item__info-container flex-grow-2">
+        <section class="item__info-container flex-grow-2 cart">
             <hr>
             <!-- add to cart -->
             <form id="cart-form" method="post" action="{$wa->getUrl('/frontendCart/add')}">
@@ -128,12 +128,12 @@
               
        </form>    
               
-              <div class="flex-wrap justify-content item__info-container_sub">
+              <div class="flex-wrap justify-content item__info-container_sub middle">
                 <span class="fw-bold">{$wa->block("tip_valuna")}</span>
                 <span>{$product->features['tip']}</span>
               </div>
               <hr>
-              <div class="flex-wrap justify-content item__info-container_sub">
+              <div class="flex-wrap justify-content item__info-container_sub middle">
                 <div>
                   <span class="fw-bold">{$wa->block("diametr_valuna")}</span>
                     <span class="modal__link" onclick="getModal('modal_diametr')">
@@ -143,7 +143,7 @@
                 <span>{$product->features['diametr']}</span>
               </div>
               <hr>
-              <div class="flex-wrap justify-content item__info-container_sub">
+              <div class="flex-wrap justify-content item__info-container_sub middle">
                 <div>
                   <span class="fw-bold">{$wa->block("pokritie_valune")}</span>
                     <span class="modal__link" onclick="getModal('modal_textura')">
@@ -154,7 +154,7 @@
               </div>
               {if $product.description}
                     <hr>
-                    <div class="item__info-container_sub">
+                    <div class="item__info-container_sub middle">
                         <span class="fw-bold">{$wa->block("opisanie_val")}</span>
                         <div class="text-justify" id="product-description" itemprop="description" style="position: relative; top: -16px;">
                         {$product.description}
@@ -176,7 +176,9 @@
         <hr>
     </section>
 {$products = $wa->shop->productSet({$product->features['id_spiska']})}
-{include file="list-items.html" products=$products}
+    <div id="product-list">
+        {include file="list-items.html" products=$products}
+    </div>
 {/if}
 
 <!-- reviews -->
@@ -196,9 +198,6 @@
 
 <!-- Modal -->
 {include file="modal.html"}
-
-
-
 
 <script type="text/javascript">
     var currency = {json_encode($currency_info)};

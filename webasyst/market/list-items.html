@@ -1,0 +1,47 @@
+<section class="market__container flex-wrap flex-wrap-wrap product-list">
+{foreach $products as $p}
+    <li itemscope itemtype ="http://schema.org/Product" style="display: block;">
+        <!-- image -->
+        <div class="market__item">
+            <a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &mdash; {strip_tags($p.summary)}{/if}">
+                {$badge_html = $wa->shop->badgeHtml($p.badge)}
+                {if $badge_html}
+                    <div class="corner top right">{$badge_html}</div>
+                {/if}
+                {$wa->shop->productImgHtml($p, '198', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy198.png"])}
+            </a>
+            <h5 class="market__item-tittle" itemprop="name"><a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &mdash; {strip_tags($p.summary)}{/if}">{$p.name}</a></h5>
+            <!-- fields -->
+            {$product = $wa->shop->product($p.id)}
+            <hr>
+            <div class="flex-wrap justify-content small market__item-prop" itemprop="{$wa->block("diametr_valuna")} {$product->features['diametr']}">
+                <span class="fw-bold">{$wa->block("diametr_valuna")}</span>
+                <span>{$product->features['diametr']}</span>
+            </div>
+            <hr>
+            <div class="flex-wrap justify-content small market__item-prop" itemprop="{$wa->block("pokritie_valune")} {$product->features['pokrytie_valuna']}">
+                <span class="fw-bold">{$wa->block("pokritie_valune")}</span>
+                <span>{$product->features['pokrytie_valuna']}</span>
+            </div>
+            <hr>
+            <div class="flex-wrap justify-content small market__item-prop" itemprop="{$wa->block("prochnost_valuna")} {$wa->block("prochnost_valuna_val")}">
+                <span class="fw-bold">{$wa->block("prochnost_valuna")}</span>
+                <span>{$wa->block("prochnost_valuna_val")}</span>
+            </div>
+            <!-- add to cart -->
+            <div itemprop="offers" class="offers" itemscope itemtype="http://schema.org/Offer">
+                {if $p.compare_price > 0}<h5 class="market__item-price"> {shop_currency($p.compare_price)} </h5>{/if}
+                <h4 class="market__item-price" itemprop="price">{shop_currency($p.price)}</h4>
+                {if $wa->shop->settings('ignore_stock_count') || $p.count === null || $p.count > 0}
+                    <form class="addtocart" method="post" action="{$wa->getUrl('/frontendCart/add')}">
+                        <input type="hidden" name="product_id" value="{$p.id}">
+                        <button type="submit" value="[`Add to cart`]" class="btn btn_buy market__item-btn">[`Add to cart`]</button>
+                    </form>
+                    <link itemprop="availability" href="http://schema.org/InStock" />
+                {else}
+                    <link itemprop="availability" href="http://schema.org/OutOfStock" />
+                {/if}
+            </div>
+        </div>
+    </li>
+{/foreach}
