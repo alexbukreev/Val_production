@@ -24,8 +24,6 @@
       <a href="{$wa->getUrl('/frontend/cart')}">
         <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>&nbsp;&nbsp;Корзина&nbsp;
         
-        
-        
          <!-- cart summary -->
         {$cart_total = $wa->shop->cart->total()}
         <span class="cart{if !$cart_total} empty{/if}" id="cart-summary">
@@ -37,7 +35,7 @@
         {if $wa->user()->isAuth()}
             <li>
                 <span class="glyphicon glyphicon-user fc_dark"></span>
-                <a href="{$wa->getUrl('/frontend/my')}" class="bold">{$wa->user('firstname')}</a>
+                <a href="{$wa->getUrl('/frontend/my')}" class="bold">{$wa->user('name')}</a>
                 |
                 <a href="?logout">[s`Log out`]</a>
             </li>

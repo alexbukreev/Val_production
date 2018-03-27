@@ -22,11 +22,14 @@ body {
 p {
 	letter-spacing: 0.04em;
 }
-input[type="number"], input[type="text"] {
+input[type="number"], 
+input[type="text"],
+input[type="password"] {
 	border-style:solid;
     border-width:1px;
 	border-color: #bdbdbd;
 	height: 20px;
+	font-size:1em;
 }
 a:active, a:hover {
 	outline:0;
@@ -293,6 +296,39 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
     border-width:1px;
 	border-color: #bdbdbd;
 }
+/* для внутренних форм фреймворка */
+em {
+	display: block;
+	color: #ED1C24;
+}
+div.content p {
+	margin-bottom: 0;
+}
+input[name="data[email]"], 
+input[name="data[password]"],
+input[name="data[password_confirm]"],
+input[name="captcha"] {
+	border-color: #ED1C24;
+	font-size:1em;
+}
+input[name="data[email]"], 
+input[name="data[password]"],
+input[name="data[password_confirm]"],
+input[name="data[firstname]"],
+input[name="data[phone]"],
+input[name="login"],
+input[name="password"] {
+	width: 250px;
+}
+img.wa-captcha-img {
+	float: left;
+	padding-right: 5px;
+}
+input[name="captcha"] {
+	margin-top: 10px
+}
+
+/* --------------------------------*/
 
 @media (max-width: 1099px) {
 	.container {

@@ -1,0 +1,13 @@
+{include file="nav_top_clear.html"}
+<div class="content">
+    <section class="container">
+        <h1 class="main-title_h">
+            [`Login`]
+        </h1>
+        <hr> 
+    <p>
+        {$wa->authAdapters()}
+        {$wa->loginForm($error, empty($without_form))}
+    </p>
+    </section>
+</div>

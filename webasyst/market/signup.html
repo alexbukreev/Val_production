@@ -1,0 +1,30 @@
+{include file="nav_top_clear.html"}
+<div class="content">
+    <div id="page" role="main">
+        {if !empty($contact)}
+            <section class="container">
+                <h1 class="main-title_h">
+                    [`Sign up`]
+                </h1>
+                <hr> 
+            <p>
+                <h5 class="second-title_h">
+                    [`Thank you!`]
+                </h5>
+                <p>[`You have successfully signed up.`]</p>
+            </p>
+            </section>
+        {else}
+            <section class="container">
+                <h1 class="main-title_h">
+                    [`Sign up`]
+                </h1>
+                <hr> 
+            <p>
+                {$wa->authAdapters()}
+                {$wa->signupForm($errors)}
+            </p>
+            </section>
+        {/if}
+    </div>
+</div>

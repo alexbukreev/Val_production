@@ -1,0 +1,25 @@
+{include file="nav_top_clear.html"}
+<div class="content">
+    <section class="container">
+        <h1 class="main-title_h">
+            {sprintf('[`Hi %s`]', {$wa->user('name')})}
+        </h1>
+        <hr> 
+    <p><a href="{$wa->getUrl('/frontend/myOrders')}"><strong>[`My orders`]</strong></a><br>
+    [`View and manage your orders.`]
+    </p>
+    
+    <p><a href="{$wa->getUrl('/frontend/myProfile')}"><strong>[`My profile`]</strong></a><br>
+    [`Update your contact information.`]
+    </p>
+    
+    {if shopAffiliate::isEnabled()}
+        <p><a href="{$wa->getUrl('/frontend/myAffiliate')}"><strong>[`Affiliate program`]</strong></a><br>
+        [`View and manage your affiliate bonus activity.`]
+        </p>
+    {/if}
+    <!-- plugin hook: 'frontend_my' -->
+    {* @event frontend_my.%plugin_id% *}
+    {foreach $frontend_my as $_}{$_}{/foreach}
+    </section>
+</div>
