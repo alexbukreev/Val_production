@@ -6,7 +6,11 @@
                 <h1 class="main-title_h">
                     [`Sign up`]
                 </h1>
-                <hr> 
+            </section>
+            <section class="container second-title_wh">
+                <hr>  
+            </section>
+            <section class="container">
             <p>
                 <h5 class="second-title_h">
                     [`Thank you!`]
@@ -19,11 +23,15 @@
                 <h1 class="main-title_h">
                     [`Sign up`]
                 </h1>
-                <hr> 
-            <p>
-                {$wa->authAdapters()}
-                {$wa->signupForm($errors)}
-            </p>
+            </section>
+            <section class="container second-title_wh">
+                <hr>  
+            </section>
+            <section class="container">
+                <p>
+                    {$wa->authAdapters()}
+                    {$wa->signupForm($errors)}
+                </p>
             </section>
         {/if}
     </div>

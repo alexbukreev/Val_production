@@ -7,28 +7,75 @@
 	<title></title>
 </head>
 <body>
-	<div class="wa-value"><input  title="Телефон"  type="text" name="data[phone]" value=""></div></div><div class="wa-field wa-field-email">
-                    <div class="wa-name">Email</div>
-                    <div class="wa-value"><input  title="Email"  type="text" name="data[email]" value="ddd@fff.com"></div></div><div class="wa-field wa-field-password">
-                    <div class="wa-name">Пароль</div>
-                    <div class="wa-value"><input   type="password" name="data[password]" value="123"></div></div><div class="wa-field wa-field-password_confirm">
-                    <div class="wa-name">Подтвердите пароль</div>
-                    <div class="wa-value"><input   type="password" name="data[password_confirm]" value="123"></div></div><div class="wa-field"><div class="wa-value"><div class="wa-captcha">
-                    </div>
 
-    <p>
-        <img class="wa-captcha-img" src="" alt="CAPTCHA" title="Обновить капчу (CAPTCHA)">
-        <strong>&rarr;</strong>
-        <input type="text" name="captcha" class="wa-captcha-input wa-error" autocomplete="off">
-    </p>
-	<div class="content">
-		<p>
-        	<a href="#" class="wa-captcha-refresh">Обновить капчу (CAPTCHA)</a>
-    	</p>
-	</div>
-	<em class="wa-error-msg">Капча введена неверно</em>
-	<input type="checkbox" name="data[terms_accepted]" value="1">
-	<br>
-	<input type="submit" value="Регистрация"> или <a href="/market/login/">войдите</a>
+<form method="post" action="">
+            <h5 class="second-title_h"><span class='glyphicon glyphicon-ok fc-bay'></span>&nbsp;Контактная информация</h5>
+                            <div id="checkout-contact-form">
+        <div class="wa-form">
+        <div class="wa-field wa-field-firstname"><div class="wa-name">Имя</div><div class="wa-value">
+<input  title="Имя"  type="text" name="customer[firstname]" value="">
+</div></div><div class="wa-field wa-field-phone"><div class="wa-name">Телефон</div><div class="wa-value">
+<p><input  title="Телефон"  type="text" name="customer[phone]" value=""></p>
+</div></div><div class="wa-field wa-field-email"><div class="wa-name">Email</div><div class="wa-value">
+<p><input  title="Email"  type="text" name="customer[email]" value=""></p>
+</div></div><input type="hidden" name="_csrf" value="" />
+                <div class="wa-field">
+            <div class="wa-value">
+                <label><input type="checkbox"  id="create-user" name="create_user" value="1"> Зарегистрироваться как постоянный покупатель</label>
+                            </div>
+        </div>
+        <div id="create-user-div" style="display:none">
+            <div class="wa-field">
+                <div class="wa-name">
+                    Email
+                </div>
+                <div class="wa-value">
+                                        <input  name="login" type="text" value="">
+                                    </div>
+            </div>
+            <div class="wa-field">
+                <div class="wa-name">
+                    Пароль
+                </div>
+                <div class="wa-value">
+                    <input name="password" type="password" value="">
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                var e = $('input[name="customer[email]"]');
+                if (e.length) {
+                    e.on('keyup', function () {
+                        if ($("#create-user-div").is(':visible')) {
+                            $('#create-user-div input[name="login"]').val($(this).val());
+                        }
+                    });
+                    $('#create-user-div input[name="login"]').on('keyup', function () {
+                        e.val($(this).val());
+                    })
+                }
+                $("#create-user").change(function () {
+                    if ($(this).is(':checked')) {
+                        $("#create-user-div").show().find('input').removeAttr('disabled');
+                        var l = $(this).closest('form').find('input[name="customer[email]"]');
+                        if (l.length && l.val()) {
+                            $('#create-user-div input[name="login"]').val(l.val());
+                        }
+                    } else {
+                        $("#create-user-div").hide().find('input').attr('disabled', 'disabled').val('');
+                    }
+                }).change();
+            });
+        </script>
+                    </div>
+</div>
+
+                        <div class="clear-both"></div>
+                            <input type="submit" value="Далее &rarr;">
+                        <div class="clear-both"></div>
+        </form>
+
+
 </body>
 </html>

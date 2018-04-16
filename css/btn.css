@@ -284,7 +284,7 @@ input[type="submit"] {
       border-color: #03a9f4;
       outline: none !important;
 
-    margin: 25px 0 15px 0;
+    margin: 35px 0 15px 0;
 }
 input[type="submit"]:hover,
 input[type="submit"]:focus {
@@ -304,6 +304,9 @@ input[type="submit"]:active {
   border-color: #0288d1;
   background-image: none;
   outline: none !important;
+}
+.btn_connection {
+  margin: 20px 0 0 0;
 }
 /* ------------------------- */
 
