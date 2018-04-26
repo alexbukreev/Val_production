@@ -21,6 +21,7 @@ function hideTopSubMunu(margingTop, id1, id2, id3, visibleClass) {
 
 // разделение на разряды в сумме на сайте
 cartTotal('cart-total');
+cartTotal('cart-total-2');
 function cartTotal(id) {
 	var htmlElem = document.getElementById(id);
 	if (htmlElem) {

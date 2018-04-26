@@ -43,6 +43,9 @@
 .cart__btn {
 	margin: 30px 0 50px 0;
 }
+.cart__btn_place-order {
+	margin: 10px 0 22px 0;
+}
 .cart__icon-del {
 	position: absolute;
 	top: 0;

@@ -1,12 +1,13 @@
 <input id="navbar-top__checkbox" type="checkbox" name="navbar-top__checkbox">
 <nav id="navbar-top" class="navbar-top">
 <section class="flex-wrap justify-content">
-    
+    {$cart_total = $wa->shop->cart->total()}
+    <span class="navbar-top__cart cart-total"></span>
   <div id = "navbar-top__burger" class="navbar-top__burger">
     <label for="navbar-top__checkbox" class="glyphicon glyphicon-menu-hamburger"></label>
   </div>
-  <a class="navbar-top__brand" href="http://art-eco.ru/valunov/">
-    <span class="valunovTitle fc_dark">Валунов</span>
+  <a class="navbar-top__brand" href="{$wa_url}">
+    <span class="valunovTitle fc_dark">Купивалун</span>
     <span class="fw-light navbar-top_small"><br>искусственные&nbsp;валуны</span>
   </a>
   <div class="navbar-top__phone flex-grow-2">
@@ -17,18 +18,14 @@
   </div>
   <ul class="navbar-top__info">
     <li>
-      <a href="http://art-eco.ru/market/connection.html"><span class="glyphicon glyphicon-send fc_dark"></span>&nbsp;&nbsp;Формы&nbsp;связи
+      <a href="/market/connection.html"><span class="glyphicon glyphicon-send fc_dark"></span>&nbsp;&nbsp;Формы&nbsp;связи
       </a>
     </li>
     <li>
       <a href="{$wa->getUrl('/frontend/cart')}">
         <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>&nbsp;&nbsp;Корзина&nbsp;
-        
-         <!-- cart summary -->
-        {$cart_total = $wa->shop->cart->total()}
-        <span class="cart{if !$cart_total} empty{/if}" id="cart-summary">
-            <span class="navbar-top__badge cart-total">{shop_currency($cart_total, true)}</span>
-        </span>
+        <!-- cart summary -->
+        <span class="navbar-top__badge cart-total">{shop_currency($cart_total, true)}</span>
       </a>
     </li>
     {if $wa->isAuthEnabled()}
@@ -52,13 +49,19 @@
   <a class="navbar-top__special navbar-top__special__phone" href="tel:+79052128506">
     <span class="glyphicon glyphicon-earphone fc_dark"></span>
   </a>
-  <a class="navbar-top__special navbar-top__special__send" href="http://art-eco.ru/market/connection.html">
+  <a class="navbar-top__special navbar-top__special__send" href="/market/connection.html">
     <span class="glyphicon glyphicon-send fc_dark"></span>
   </a>
   <a class="navbar-top__special navbar-top__special_cart" href="{$wa->getUrl('/frontend/cart')}">
     <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>
-    <span class="navbar-top__badge navbar-top__badge-special navbar-top__special_cart__badge">88</span>
+    <span class="navbar-top__badge navbar-top__badge-special navbar-top__special_cart__badge cart-total">{shop_currency($cart_total, true)}</span>
+  </a>
+  <a class="navbar-top__special navbar-top__special_user" href="{$wa->signupUrl()}">
+      <span class="glyphicon glyphicon-user fc_dark"></span>
+  </a>
+  <a class="navbar-top-left__special navbar-top__special_cart" href="{$wa->getUrl('/frontend/cart')}">
+      <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>
+      <span class="navbar-top__badge navbar-top__badge-special navbar-top__special_cart__badge cart-total">{shop_currency($cart_total, true)}</span>
   </a>
 </section>
 </nav>
-

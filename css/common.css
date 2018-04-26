@@ -329,11 +329,12 @@ input[name="email"],
 input[name="login"],
 input[name="customer[firstname]"],
 input[name="customer[phone]"],
-input[name="customer[email]"] {
+input[name="customer[email]"],
+input[name="profile[firstname]"],
+input[name="profile[email]"],
+input[name="profile[phone]"],
+input[name="password_confirm"]{
 	width: 250px;
-}
-textarea[name="body"] {
-	height: 80px;
 }
 input[name="data[firstname]"],
 input[name="data[name]"],
@@ -349,8 +350,22 @@ input[name="customer[firstname]"],
 input[name="customer[phone]"],
 input[name="customer[email]"],
 input[name="create_user"],
+input[name="profile[firstname]"],
+input[name="profile[email]"],
+input[name="profile[phone]"],
+input[name="profile[password]"],
+input[name="profile[password_confirm]"],
+input[name="password_confirm"],
 .send-form-confirm {
 	margin-bottom: 15px;
+}
+input[name="profile[password]"],
+input[name="profile[password_confirm]"] {
+	margin-left: 5px;
+	margin-right: 15px;
+}
+textarea[name="body"] {
+	height: 80px;
 }
 textarea[name="body"] {
 	margin-bottom: 5px;

@@ -35,8 +35,8 @@ e-mail: alexander.v.bukreev@gmail.com
 	}
 .navbar-top__phone {
 	padding: 0;
-  	margin: 5px 0 0 0;
-  	font-size: 1.6em;
+  	margin: 10px 0 0 0;
+  	font-size: 1.2em;
   	text-align: center;
 }
 .navbar-top__info {
@@ -52,6 +52,12 @@ e-mail: alexander.v.bukreev@gmail.com
 .navbar-top__special {
 	display: none;
 	margin: 11px 30px -10px 0;
+	font-size: 1.4em;
+  	text-align: right;
+}
+.navbar-top-left__special {
+	display: none;
+	margin: 11px 0 -10px 0;
 	font-size: 1.4em;
   	text-align: right;
 }
@@ -78,10 +84,6 @@ e-mail: alexander.v.bukreev@gmail.com
   vertical-align: middle;
   background-color: #F07075;
   border-radius: 20px;
-}
-.navbar-top__badge:empty {
-  display: none;
-
 }
 .navbar-top a:hover .navbar-top__badge {
   background-color: #ED1C24;
@@ -147,6 +149,11 @@ a.navbar-top__bottom_light-link:hover {
 .navbar-top__bottom_link-disabled {
 	color: #000;
 }
+.navbar-top__cart {
+	position: fixed;
+	top: -100px;
+	right: 50px;
+}
 /* выпадающее меню */
 input#navbar-top__checkbox:checked ~ #navbar-top {
 	height: 110px;
@@ -182,10 +189,12 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	  	margin: 10px 10px 0 8px;
 	  	line-height:0.7;
 	}
+	/*
 	.navbar-top__phone {
 		margin: 10px 0 0 0;
 	  	font-size: 1.2em;
 	}
+	*/
 }
 @media (max-width: 949px) {
 	/* выпадающее меню */
@@ -237,15 +246,36 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		top: 57px;
 		right: 0px;
 	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
+		position: fixed;
+		display: block;
+		margin: 0;
+	  	font-size: 1.4em;
+	  	top: 65px;
+		right: 25px;
+	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {
 		margin-bottom: 10px;
 	}
+	/*
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
 		margin: 5px 0 0 0;
 	  	font-size: 1.6em;
 	}
+	*/
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special {
 		display: none;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top-left__special {
+		display: none;
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__brand {
+		-ms-flex-positive: 2;
+		-webkit-flex-grow: 2;
+		flex-grow: 2; 
+	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
+		top: 90px;
 	}
 	.navbar-top__info {
 		display: none;
@@ -258,17 +288,6 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	}
 }
 @media (max-width: 799px) {
-	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
-		position: fixed;
-		display: block;
-		margin: 0;
-	  	font-size: 1.2em;
-	  	top: 65px;
-		right: 25px;
-	}
-	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
-		top: 90px;
-	}
 	.navbar-top__burger {
 		display: block;
 	}
@@ -290,48 +309,61 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		height: 20px;
 	}
 }
-@media (max-width: 609px) {
-	.navbar-top__special {
+@media (max-width: 666px) {
+	.navbar-top__special,
+	.navbar-top-left__special {
 		display: none;
+	} 
+	.navbar-top-left__special {
+		display: inline-block;
 	}
 }
 @media (max-width: 419px) {
 	.navbar-top__btn::after {
 		content: "Выбрать"
 	}
+	/*
 	.navbar-top__compens {
 		height: 10px;
-	}
+	*/
 }
-@media (max-width: 359px) {
+@media (max-width: 400px) {
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__phone {
 		position: fixed;
 		display: block;
-		right: 20px;
+		right: 15px;
 		top: 75px;
 		margin: 0;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__send {
 		position: fixed;
 		display: block;
-		right: 20px;
+		right: 15px;
 		top: 125px;
 		margin: 0;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart {
 		position: fixed;
 		display: block;
-		right: 20px;
+		right: 15px;
 		top: 178px;
 		margin: 0;
 	}
+	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_user {
+		position: fixed;
+		display: block;
+		right: 15px;
+		top: 225px;
+		margin: 0;
+	}
+	/*
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart__badge {
 		position: fixed;
 		display: block;
 		right: 7px;
 		top: 175px;
 		margin: 0;
-	}
+	*/
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__info {
 		display: none;
 	}
@@ -346,5 +378,11 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	}
 	.navbar-top__btn {
 		padding: 8px 8px 10px 8px !important;
+	}
+	.navbar-top__special_cart__badge {
+		display: none;
+	}
+	.navbar-top-left__special {
+		margin-right: 15px;
 	}
 }

@@ -1,0 +1,86 @@
+<style>
+table.table { margin-top: 25px; margin-left: -10px; width: 100%; border-spacing:0; border-collapse:collapse; }
+table.table td { padding: 15px 7px 20px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+table.table td.min-width { width: 1%; }
+table.table td p { margin: 0; }
+table.table td input.numerical { width: 50px; margin-right: 5px; text-align: right; }
+table.table tr.no-border td { border: none; }
+table.table tr.thin td { padding-top: 13px; padding-bottom: 0; }
+.align-right { text-align: right; }
+.nowrap { white-space: nowrap; }
+pre { word-wrap: break-word; }
+</style>
+        
+<h1>{$order.id}</h1>
+
+<table class="table">
+    <tr>
+        <th></th>
+        <th class="align-right">Кол-во</th>
+        <th class="align-right">Итого</th>
+    </tr>
+    {$subtotal = 0}
+    {foreach $order.items as $item}
+    <tr>
+        <td>
+            {$item.name|escape}
+            {if !empty($item.download_link)}<a href="{$item.download_link}"><strong>Скачать</strong></a>{/if}
+        </td>
+        <td class="align-right nowrap">× {$item.quantity}</td>
+        <td class="align-right nowrap">{wa_currency($item.price * $item.quantity, $order.currency)}</td>
+    </tr>
+    {$subtotal = $subtotal + $item.price * $item.quantity}
+    {/foreach}
+    <tr class="no-border thin">
+        <td colspan="2" class="align-right">Подытог</td>
+        <td class="align-right nowrap">{wa_currency($subtotal, $order.currency)}</td>
+    </tr>
+    <tr class="no-border thin">
+        <td colspan="2" class="align-right">Скидка</td>
+        <td class="align-right nowrap">{wa_currency($order.discount, $order.currency)}</td>
+    </tr>
+    <tr class="no-border thin">
+        <td colspan="2" class="align-right">Доставка</td>
+        <td class="align-right nowrap">{wa_currency($order.shipping, $order.currency)}</td>
+    </tr>
+    <tr class="no-border thin">
+        <td colspan="2" class="align-right">Налог</td>
+        <td class="align-right nowrap">{wa_currency($order.tax, $order.currency)}</td>
+    </tr>
+    <tr class="no-border thin large">
+        <td colspan="2" class="align-right"><b>Итого</b></td>
+        <td class="align-right nowrap bold">{wa_currency($order.total, $order.currency)}</td>
+    </tr>
+</table>
+
+{if !empty($customer.email) || !empty($customer.phone)}
+    <h3>Контактная информация</h3>
+    {if !empty($customer.email)}
+        Email: {$customer->get("email", "default")|escape}<br>
+    {/if}
+    {if !empty($customer.phone)}
+        Телефон: {$customer->get("phone", "default")|escape}<br>
+    {/if}
+{/if}
+
+<h3>Получатель{if !empty($order.params.shipping_name)} — {$order.params.shipping_name}{/if}</h3>
+<p>{$customer.name|escape}<br>
+{$shipping_address}</p>
+
+<h3>Плательщик{if !empty($order.params.payment_name)} — {$order.params.payment_name}{/if}</h3>
+<p>{$customer.name|escape}<br>
+{$billing_address}</p>
+
+<h3>Комментарий к заказу</h3>
+<pre>{$order.comment|escape}</pre>
+
+<p>Просмотр информации о заказе: <a href="{$order_url}" target="_blank"><strong>{$order_url}</strong></a>
+{if !empty($order.params.auth_pin)}<br>PIN: <strong>{$order.params.auth_pin}</strong>{/if}
+</p>
+
+<p>Спасибо за покупку в магазине «{$wa->shop->settings("name")|escape}»!</p>
+
+<p>--<br>
+{$wa->shop->settings("name")|escape}<br>
+<a href="mailto:{$wa->shop->settings("email")}">{$wa->shop->settings("email")}</a><br>
+{$wa->shop->settings("phone")}<br></p>
