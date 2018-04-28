@@ -251,7 +251,7 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		display: block;
 		margin: 0;
 	  	font-size: 1.4em;
-	  	top: 65px;
+	  	top: 60px;
 		right: 25px;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {

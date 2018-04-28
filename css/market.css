@@ -33,7 +33,6 @@
 	margin-top: 5px;
 }
 .market__item {
-	min-height: 300px;
 	margin: 0 0 3px 0;
 	padding: 10px;
 	text-align: center;
@@ -55,7 +54,7 @@
 }
 @media (max-width: 1099px) {
 	.market__container {
-		width: 1020px;
+		width: 940px;
 	}
 }
 @media (max-width: 1029px) {
@@ -65,11 +64,16 @@
 }
 @media (max-width: 949px) {
 	.market__container {
-		width: 790px;
+		width: 650px;
 	}
 }
-@media (max-width: 799px) {
+@media (max-width: 650px) {
 	.market__container {
 		width: auto;
+	}
+}
+@media (max-width: 543px) {
+	.market__container {
+		width: 270px;
 	}
 }

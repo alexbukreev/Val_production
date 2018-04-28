@@ -1,4 +1,4 @@
-<section class="market__container flex-wrap flex-wrap-wrap product-list">
+<section class="item__container flex-wrap flex-wrap-wrap product-list">
 {foreach $products as $p}
     <li itemscope itemtype ="http://schema.org/Product" style="display: block;">
         <!-- image -->
@@ -8,7 +8,7 @@
                 {if $badge_html}
                     <div class="corner top right">{$badge_html}</div>
                 {/if}
-                {$wa->shop->productImgHtml($p, '198', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy198.png"])}
+                {$wa->shop->productImgHtml($p, '252', ['itemprop' => 'image', 'alt' => $p.name, 'default' => "`$wa_theme_url`img/dummy252.png"])}
             </a>
             <h5 class="market__item-tittle" itemprop="name"><a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &mdash; {strip_tags($p.summary)}{/if}">{$p.name}</a></h5>
             <!-- fields -->

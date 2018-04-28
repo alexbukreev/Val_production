@@ -20,14 +20,31 @@ function hideTopSubMunu(margingTop, id1, id2, id3, visibleClass) {
 }
 
 // разделение на разряды в сумме на сайте
-cartTotal('cart-total');
-cartTotal('cart-total-2');
-function cartTotal(id) {
-	var htmlElem = document.getElementById(id);
-	if (htmlElem) {
-		htmlElem.innerHTML = htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
-	}
-}
+//cartTotal('cart-total');
+//cartTotal('cart-total-2');
+//function cartTotal(id) {
+	//var htmlElem = document.getElementById(id);
+	//console.log('d');
+	//document.getElementById(id).innerHTML = "fff";
+	//htmlElem.innerHTML = "fff";
+	//if (htmlElem) {
+
+		//htmlElem.innerHTML = 'fff';
+		//htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
+	//}
+//}
+
+//window.onload = function() {
+    cartTotal('cart-total');
+    cartTotal('cart-total-2');
+    function cartTotal(id) {
+		var htmlElem = document.getElementById(id);
+    	if (htmlElem) {
+        	htmlElem.innerHTML = htmlElem.innerHTML.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+        	//htmlElem.dataset.total.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ') + '&nbsp;руб.';
+		}
+    };
+//}
 
 // modal 
 var modalId;
