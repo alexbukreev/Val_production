@@ -138,6 +138,7 @@ a.navbar-top__bottom_light-link:active,
 a.navbar-top__bottom_light-link:visited {
 	color: #e0e0e0;
 	text-decoration: none;
+	text-shadow: 0 0 0.2em #000000, 0 0 0.3em #000000, 0 0 0.4em #000000, 0 0 0.5em #000000;
 }
 a.navbar-top__bottom_light-link:hover {
 	color: #fff;
@@ -145,6 +146,7 @@ a.navbar-top__bottom_light-link:hover {
 }
 .navbar-top__bottom_light-link-disabled {
 	color: #fff;
+	text-shadow: 0 0 0.2em #000000, 0 0 0.3em #000000, 0 0 0.4em #000000, 0 0 0.5em #000000;
 }
 .navbar-top__bottom_link-disabled {
 	color: #000;
@@ -168,18 +170,23 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 }
 input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:link {
 	color: #03a9f4;
+	text-shadow: none;
 }
 input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:active {
 	color: #03a9f4;
+	text-shadow: none;
 }
 input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:visited {
 	color: #03a9f4;
+	text-shadow: none;
 }
 input#navbar-top__checkbox:checked ~ section a.navbar-top__bottom_light-link:hover {
 	color: #0288d1;
+	text-shadow: none;
 }
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disabled {
 	color: #000;
+	text-shadow: none;
 }
 @media (max-width: 1029px) {
 	.navbar-top_small {

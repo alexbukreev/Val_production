@@ -24,7 +24,7 @@
 .modal {
     position: relative;
     display: inline-block;
-    top: 30px;
+    top: 53px;
     /*vertical-align: middle;*/
 }
 .modal_container {
@@ -42,9 +42,9 @@
 }
 .modal__icon-del {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 10px;
-    font-size: 20px;
+    font-size: 35px;
     cursor: pointer;
     color: #bdbdbd;
 }
@@ -77,9 +77,5 @@
 @media (max-width: 799px) {
     .modal_container {
         width: 100%;
-        width: 90vw;
-    }
-    .modal {
-       top: 0;  
     }
 }
