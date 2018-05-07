@@ -10,6 +10,7 @@ function hideTopSubMunu(margingTop, id1, id2, id3, visibleClass) {
 	var btnTopId = document.getElementById(id3);
 	// показываем и скрываем бургер
     if (document.body.scrollTop > margingTop || document.documentElement.scrollTop > margingTop) {
+    	//console.log(navbarTopBurger.classList.contains('navbar-top__burger'));
         navbarTopBurger.classList.add(visibleClass);
         btnTopId.classList.remove('visible-none');
     } else {

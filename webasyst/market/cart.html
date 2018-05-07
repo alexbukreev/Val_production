@@ -6,11 +6,19 @@
     <h1 class="main-title_h">
       Корзина
     </h1>
+</section>
+<section class="container second-title">
+    <hr>  
+</section>
+<section class="container">
     {if !$cart.count}
-        <p>[`Your shopping cart is empty.`]</p>
+        <h5>Ваша корзина пуста!</h5>
+        <p>
+            <a href="{$wa_app_url}">Перейти в магазин</a>
+        </p>
     {else}
 </section>
-
+<p></p>
 <form method="post">
     <table class="table cart" style="width: 100%; border-collapse: collapse;">
     <!-- products -->
@@ -41,7 +49,7 @@
                         <hr>
                         <div class="flex-wrap justify-content small market__item-prop">
                           <div class="fw-bold">Цена за шт.:&nbsp;</div>
-                          <div class="item__info-container_marging price nowrap"  data-price="{shop_currency($p.price, null, null, 0)}">{shop_currency($p.price)}</div>
+                          <div class="item__info-container_marging price nowrap">{shop_currency($item.price, $item.currency)}</div>
                         </div>
                         <a class="delete" href="#" title="[`Remove from cart`]"><span class='glyphicon glyphicon glyphicon-remove-sign cart__icon-del remove'></span></a>
                       </section>
@@ -72,10 +80,10 @@
                         </div>
                         <div style="margin-top: 10px;">
                             &nbsp;<input type="text" name="coupon_code" value="{$coupon_code|escape}"> 
-                            &nbsp;<button type="submit"  value="[`Apply`]">Применить</button>
+                            &nbsp;<button class="btn btn_mini btn_def" type="submit"><span class="middle">Применить</span></button>
                         </div>
                         {/if}
-                        <h5 class="cart__discount cart-discount nowrap">[`Discount`]&nbsp;&minus; {shop_currency($discount, true)}</h5>
+                        <h5 class="cart__discount cart-discount nowrap">Скидка:&nbsp;&minus; {shop_currency($discount, true)}</h5>
                     </section>
                     
                     <section class="cart__sum">
@@ -84,7 +92,7 @@
                         <h3 class="cart-total cart__sum_text">{shop_currency($cart.total, true)}</h3>
                       </section>
                       <section class="cart__asterisk">
-                        <span class="asterisk">*&nbsp;</span><span class="small">Стоимость заказа расчитана без учета <a href="{$wa_url}valunov/service.html">доставки</a>.</span>
+                        <span class="asterisk">*&nbsp;</span><span class="small">Стоимость заказа расчитана без учета <a href="http://kupivalun.ru/service.html" target="_blank">доставки</a>.</span>
                       </section>
                     </section>
             
@@ -98,3 +106,6 @@
 </form>
 
 {/if}
+
+<!-- Modal -->
+{include file="modal.html"}

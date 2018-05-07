@@ -157,13 +157,33 @@ a.navbar-top__bottom_light-link:hover {
 	right: 50px;
 }
 /* выпадающее меню */
-input#navbar-top__checkbox:checked ~ #navbar-top {
+input#navbar-top__checkbox:checked ~ #navbar-top { 
 	height: 110px;
+  	animation-name: animationMenu__1;
+  	animation-duration: .5s;
+  	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  	animation-direction: alternate;
+  	animation-iteration-count: 1;
+}
+@keyframes animationMenu__1 { /* анимация субменю*/
+    0% {height: 53px;}
+    100% {height: 110px;}
 }
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 	position: fixed;
 	display: block;
 	margin-top: 10px;
+	opacity: 1;
+	animation-name: animationMenu__links;
+	animation-duration: .5s;
+  	animation-timing-function: linear;
+  	animation-direction: alternate;
+  	animation-iteration-count: 1;
+}
+@keyframes animationMenu__links { /* анимация субменю */
+    0% {opacity: 0;}
+    10% {opacity: 0;}
+    80% {opacity: 1;}
 }
 input#navbar-top__checkbox:checked ~ section .navbar-top__bottom li {
 	margin-top: 10px;
@@ -207,6 +227,15 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	/* выпадающее меню */
 	input#navbar-top__checkbox:checked ~ #navbar-top {
 		height: 310px;
+	  	animation-name: animationMenu__2;
+	  	animation-duration: .5s;
+	  	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
+	}
+	@keyframes animationMenu__2 { /* анимация субменю*/
+	    0% {height: 53px;}
+	    100% {height: 310px;}
 	}
 	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 		position: fixed;
@@ -252,6 +281,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		text-align: left;
 		top: 57px;
 		right: 0px;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__phone {
 		position: fixed;
@@ -260,6 +296,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	  	font-size: 1.4em;
 	  	top: 60px;
 		right: 25px;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__info li {
 		margin-bottom: 10px;
@@ -341,6 +384,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		right: 15px;
 		top: 75px;
 		margin: 0;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special__send {
 		position: fixed;
@@ -348,6 +398,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		right: 15px;
 		top: 125px;
 		margin: 0;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart {
 		position: fixed;
@@ -355,6 +412,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		right: 15px;
 		top: 178px;
 		margin: 0;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_user {
 		position: fixed;
@@ -362,6 +426,13 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 		right: 15px;
 		top: 225px;
 		margin: 0;
+		
+		opacity: 1;
+		animation-name: animationMenu__links;
+		animation-duration: .5s;
+	  	animation-timing-function: linear;
+	  	animation-direction: alternate;
+	  	animation-iteration-count: 1;
 	}
 	/*
 	input#navbar-top__checkbox:checked ~ nav .navbar-top__special_cart__badge {

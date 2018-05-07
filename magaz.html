@@ -47,7 +47,7 @@
           <li>
             <a href="cart.html">
               <span class="glyphicon glyphicon-shopping-cart fc_dark"></span>&nbsp;&nbsp;Корзина&nbsp;
-              <span class="navbar-top__badge">1 320 000 руб.</span>
+              <span id="countCart" class="navbar-top__badge">1 320 000 руб.</span>
             </a>
           </li>
           <li>
@@ -115,7 +115,7 @@
       <section class="market__sort_marging-bottom middle">
         <hr>
         <div class="market__top-line">
-          <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее'></span>
+          <span class='glyphicon glyphicon-question-sign fc-gray small__icon' title='Подробнее' onclick="getModal('modal_diametr')"></span>
           <span class="fw-bold">диаметр&nbsp;(см):&nbsp;</span>
           <input type='checkbox' id='inlineCheckbox1' value='option1'>&nbsp;30&nbsp;
           <input type='checkbox' id='inlineCheckbox2' value='option2'>&nbsp;50&nbsp;
@@ -183,7 +183,7 @@
           <span>Стандартная</span>
         </div>
         <h4 class="market__item-price">13 900 руб.</h4>
-        <button type="submit" value="[`Add to cart`]" class="btn btn_buy market__item-btn">В корзину</button>
+        <button type="submit" value="[`Add to cart`]" class="btn btn_buy market__item-btn" onclick="countCartAdd('countCart')">В корзину !!!</button>
       </div>
       <div class="market__item">
         <a href="item.html"><img src="./market_img/252.jpg"/></a>
@@ -410,7 +410,7 @@
               <h4 class="modal__title">Как выбрать валун</h4>
               <hr>
               <div class="modal__content">
-                <p>Если вы собираетесь закрывать валуном объект на вашем участке, то выбор правильного размера валуна имеет важное значение.</p>
+                <p>Если вы собираетесь закрывать</p>
                 <p>диаметр закрываемого объекта</p>
                 <p>Далее идет инструкция по выбору...</p>
                 <p>Если у вас остались вопросы, просто свяжитесь с нами.</p>
