@@ -1,0 +1,12 @@
+.articl__title {
+	margin-top: 0;
+}
+.articl__bottom {
+	margin-bottom: 50px;
+}
+@media (max-width: 726px) {
+	.articl__title {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+}

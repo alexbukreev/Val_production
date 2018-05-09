@@ -2,7 +2,7 @@
 {foreach $products as $p}
     <li itemscope itemtype ="http://schema.org/Product" style="display: block;">
         <!-- image -->
-        <div class="market__item">
+        <div class="market__item-list">
             <a href="{$p.frontend_url}" title="{$p.name}{if $p.summary} &mdash; {strip_tags($p.summary)}{/if}">
                 {$badge_html = $wa->shop->badgeHtml($p.badge)}
                 {if $badge_html}

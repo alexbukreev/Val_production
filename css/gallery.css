@@ -1,0 +1,6 @@
+.gallery__item {
+	margin: 0 0 3px 0;
+	padding: 10px;
+	background-color: gray;
+	width: 290px;
+}

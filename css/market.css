@@ -33,6 +33,13 @@
 	margin-top: 5px;
 }
 .market__item {
+	width: 290px;
+	margin: 0 0 3px 0;
+	padding: 10px;
+	text-align: center;
+}
+.market__item-list {
+	width: 252px;
 	margin: 0 0 3px 0;
 	padding: 10px;
 	text-align: center;
@@ -54,7 +61,7 @@
 }
 @media (max-width: 1099px) {
 	.market__container {
-		width: 940px;
+		width: 1020px;
 	}
 }
 @media (max-width: 1029px) {
@@ -64,16 +71,21 @@
 }
 @media (max-width: 949px) {
 	.market__container {
-		width: 650px;
+		width: 700px;
 	}
 }
-@media (max-width: 650px) {
+@media (max-width: 699px) {
 	.market__container {
 		width: auto;
 	}
 }
-@media (max-width: 543px) {
+@media (max-width: 620px) {
 	.market__container {
-		width: 270px;
+		width: 310px;
+	}
+}
+@media (max-width: 310px) {
+	.market__container {
+		width: auto;
 	}
 }
