@@ -78,3 +78,4 @@ function closeBtn() {
 function scrollOnTop() {
 	window.scrollTo(0,0);
 }
+

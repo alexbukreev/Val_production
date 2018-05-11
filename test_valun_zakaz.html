@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<meta charset="utf-8">
+<head>
+	<title></title>
+    <link href="css/common.css" rel="stylesheet">
+    <link href="css/nav-top.css" rel="stylesheet">
+    <link href="css/footer.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
+    <link href="css/landing.css" rel="stylesheet">
+    <link href="css/btn.css" rel="stylesheet">
+    <link href="css/modal.css" rel="stylesheet">
+
+    <link href="css/item.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section id="valunZakazSection" class="container">
+
+	<!-- ---------------------------- -->
+
+	<p class="fw-bold">Здесь вы можете посчитать стоимость индивидуального изготовления валуна и отправить нам заявку. Для заполнения формы расчета вам может быть полезна следующая информация:</p>   
+    <p><span class='glyphicon glyphicon-ok-circle fc-ultra-gray'></span>&nbsp;Устанавливаемые размеры (длина, ширина и высота) это размеры не самого валуна, а того предметы, который нужно закрыть. Максимальное каждого значения длины, ширины и высоты равно 500 см. Минимальное значение длины и ширины 50 см.</p>
+    <p><span class='glyphicon glyphicon-ok-circle fc-ultra-gray'></span>&nbsp;Если у вас возникли вопросы, то можно связаться с нами по телефону или другим удобным для вас способом (см. раздел <a href="http://kupivalun.ru/connection.html">Контакты</a>).</p>
+    <p><span class='glyphicon glyphicon-ok-circle fc-ultra-gray'></span>&nbsp;В комментарии вы можете написать ваши вопросы и пожелания. Например, цвет покрытия валуна, телефон для связи, ваше имя и прочее.</p>
+    <p><span class='glyphicon glyphicon-ok-circle fc-ultra-gray'></span>&nbsp;Поле «Email» обязательно, пожалуйста, заполните его перед отправкой заявки. Дополнительные способы связи с вами можно указать в поле «Комментарии к заказу».</p>
+    <p><span class='glyphicon glyphicon-ok-circle fc-ultra-gray'></span>&nbsp;После отправки сообщения наш менеджер свяжется с вами для уточнения деталей.</p>
+   
+   	<h5 >Форма расчета стоимости валуна</h5>
+	<section class="item__info-container_custom middle">
+		<table>
+			<tr>
+				<td class="fw-bolder">Длина:&nbsp;&nbsp;</td>
+				<td>
+					<input type='number' placeholder=0 min='50' max='500' id='inputIndividualLength' value="50">&nbsp;см
+				</td>
+			</tr>
+			<tr>
+				<td class="fw-bolder">Ширина:&nbsp;&nbsp;</td>
+				<td>
+					<input type='number' placeholder=0 min='50' max='500' id='inputIndividualWidth' value="50">&nbsp;см
+				</td>
+			</tr>
+			<tr>
+				<td class="fw-bolder">Высота:&nbsp;&nbsp;</td>
+				<td>
+					<input type='number' placeholder=0 min='0' max='500' id='inputIndividualHeight' value="0">&nbsp;см
+				</td>
+			</tr>
+		</table>
+	</section>
+
+	<section class="item__info-container_custom middle flex-wrap flex-wrap-wrap">
+		<div><span class="fw-bolder">Основание:&nbsp;&nbsp;</span></div>
+		<div>
+			<label>
+				<input type='radio' name='inputIndividuaFormRadio' id='inputIndividuaFormRadio1' value='inputIndividuaOval' checked='' onclick="btnOnClickBg('inputIndividuaOval')">&nbsp;Округлое
+			</label>
+			<label>
+				<input type='radio' name='inputIndividuaFormRadio' id='inputIndividuaFormRadio2' value='inputIndividuaRec' onclick="btnOnClickBg('inputIndividuaRec')">&nbsp;Прямоугольное
+			</label>
+		</div>
+	</section>
+
+	<section class="item__info-container_custom middle flex-wrap flex-wrap-wrap">
+		<div><span class="fw-bolder">Прочность:&nbsp;&nbsp;</span></div>
+		<div>
+			<label>
+				<input type='radio' name='strength' id='strengthRadio1' value='option1' checked='' onclick="btnOnClickStr('option1')">&nbsp;Стандартная
+			</label>
+			<label>
+				<input type='radio' name='strength' id='strengthRadio2' value='option2' onclick="btnOnClickStr('option2')">&nbsp;Усиленная
+			</label>
+		</div>
+	</section>
+
+	
+	<h3><span id = 'inputIndividualPrice'>...</span> руб.</h3>
+
+<!-- ---------------------------- -->
+
+	<div class="wa-value">
+		<input type="hidden" name="subject" value="value">
+		<textarea id="valunComment" name="body"></textarea>
+	</div>
+	<div class="wa-value">
+		<input type="hidden" name="subject" value="value">
+		<textarea id="valunZakaz" name="body"></textarea>
+	</div>
+</section>
+<script type="text/javascript" src="js/individual.js"></script>
+<script>
+	mainListener("valunZakazSection");
+	getPrice();
+</script>
+</body>
+</html>
