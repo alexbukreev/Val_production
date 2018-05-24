@@ -226,7 +226,7 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 @media (max-width: 949px) {
 	/* выпадающее меню */
 	input#navbar-top__checkbox:checked ~ #navbar-top {
-		height: 310px;
+		height: 280px;
 	  	animation-name: animationMenu__2;
 	  	animation-duration: .5s;
 	  	animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -235,7 +235,7 @@ input#navbar-top__checkbox:checked ~ section .navbar-top__bottom_light-link-disa
 	}
 	@keyframes animationMenu__2 { /* анимация субменю*/
 	    0% {height: 53px;}
-	    100% {height: 310px;}
+	    100% {height: 280px;}
 	}
 	input#navbar-top__checkbox:checked ~ section .navbar-top__bottom {
 		position: fixed;

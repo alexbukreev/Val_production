@@ -64,6 +64,7 @@ e-mail: alexander.v.bukreev@gmail.com
 .landing_text-center {
   text-align: center;
 }
+/*
 @media (max-width: 1500px) {
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_1500.jpg') 
@@ -78,7 +79,10 @@ e-mail: alexander.v.bukreev@gmail.com
     no-repeat center center fixed;
   }
 }
+*/
+/*
 @media (max-width: 1200px) {
+  
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_1200.jpg') 
     no-repeat center center fixed;
@@ -91,6 +95,7 @@ e-mail: alexander.v.bukreev@gmail.com
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark_1200.jpg')
     no-repeat center center fixed;
   }
+  */
 }
 @media (max-width: 1099px) {
   .landing_decrease-font {
@@ -104,6 +109,7 @@ e-mail: alexander.v.bukreev@gmail.com
   .landing_top-2 {
     margin: 0 0 70px 0;
   }
+  /*
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_1099.jpg') 
     no-repeat center center fixed;
@@ -116,6 +122,7 @@ e-mail: alexander.v.bukreev@gmail.com
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark_1099.jpg')
     no-repeat center center fixed;
   }
+  */
 }
 @media (max-width: 999px) {
   .landing__logo {
@@ -125,6 +132,7 @@ e-mail: alexander.v.bukreev@gmail.com
     margin: 0 0 70px 0;
     line-height: 1.4em;
   }
+  /*
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_999.jpg') 
     no-repeat center center fixed;
@@ -137,6 +145,7 @@ e-mail: alexander.v.bukreev@gmail.com
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark_999.jpg')
     no-repeat center center fixed;
   }
+  */
 }
 @media (max-width: 949px) {
   .landing_decrease-font {
@@ -151,6 +160,7 @@ e-mail: alexander.v.bukreev@gmail.com
     font-size: 1.3em;
     margin: 0 0 60px 0;
   }
+  /*
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_949.jpg') 
     no-repeat center center fixed;
@@ -163,6 +173,7 @@ e-mail: alexander.v.bukreev@gmail.com
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark_949.jpg')
     no-repeat center center fixed;
   }
+  */
 }
 @media (max-width: 799px) {
   .landing_top-1 {
@@ -170,6 +181,7 @@ e-mail: alexander.v.bukreev@gmail.com
     margin-top: 30px;
     line-height: 1.3em;
   }
+  /*
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_799.jpg') 
     no-repeat center center fixed;
@@ -185,6 +197,7 @@ e-mail: alexander.v.bukreev@gmail.com
   .landing_top {
     padding-bottom: 80px;
   }
+  */
 }
 @media (max-width: 779px) {
   .landing_decrease-font {
@@ -206,6 +219,8 @@ e-mail: alexander.v.bukreev@gmail.com
   .landing_text-center {
     text-align: left;
   }
+
+  /*
   .landing__bg-img_color {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_779.jpg') 
     no-repeat center center fixed;
@@ -217,7 +232,7 @@ e-mail: alexander.v.bukreev@gmail.com
   .landing__bg-img_dark {
     background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_tr_dark_779.jpg')
     no-repeat center center fixed;
-  }
+  */
 }
 @media (max-width: 769px) {
   .landing_decrease-font {
@@ -247,6 +262,10 @@ e-mail: alexander.v.bukreev@gmail.com
     max-width: 100%;
     height: 80px;
     margin: 1vw 25px 1vw 5vh;
+  }
+  .landing__bg-img_color {
+    background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/bg/bg_1200.jpg') 
+    no-repeat center center fixed;
   }
 }
 @media (max-width: 399px){

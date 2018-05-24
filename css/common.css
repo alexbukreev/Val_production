@@ -139,6 +139,9 @@ hr {
 .middle {
 	font-size: 0.9em !important;
 }
+.large {
+	font-size: 1.2em;
+}
 .text-justify {
   text-align: justify;
 }
@@ -467,6 +470,20 @@ ul.menu-h li.selected ul * { background: #fff !important; }
 .ico-visible {
 	display: none;
 }
+.img__290 {
+	width: 290px;
+}
+.social-left {
+	position: fixed;
+	top: 180px;
+	left: -1px;
+	width: 15px;
+	text-align: left;
+	opacity: 0.9;
+}
+.ya-share2__title {
+  display: none !important;
+}
 @media (min-width: 800px) {
 	.visible-block { /* анимация бургера*/
 	display: block !important;
@@ -535,6 +552,9 @@ ul.menu-h li.selected ul * { background: #fff !important; }
 		width: auto;
 		padding-right: 10px;
   		padding-left: 10px;
+	}
+	.social-left {
+		display: none;
 	}
 }
 @media (max-width: 769px) {

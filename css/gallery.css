@@ -4,3 +4,52 @@
 	background-color: gray;
 	width: 290px;
 }
+/*
+.gallery_large-pict {
+  	background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/gallery/large/1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+*/
+
+.gallety_pointer {
+	cursor: pointer;
+}
+
+.gallery__icon-del {
+	opacity: 0.5;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    font-size: 35px;
+    cursor: pointer;
+    color: #bdbdbd;
+}
+.gallery__icon-del:hover {
+	opacity: 1;
+    color: #ED1C24;
+}
+
+.gallery__left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50%;
+	background-color: #000;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.gallery__right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 50%;
+	background-color: #000;
+	opacity: 0;
+	cursor: pointer;
+}
+

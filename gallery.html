@@ -94,8 +94,8 @@
   </section>
   <section class="market__container flex-wrap justify-content flex-wrap-wrap">
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/1.jpg"/>
-      <h5 class="market__item-tittle"><a href="">...</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/1.jpg" onclick="getGalleryModal('gallery-1')"/>
+      <span class="market__item-tittle fw-bold"><a href="">...</a></span>
       <hr>
       <span class="small"><a href="">...</a></span>
       <hr>
@@ -103,8 +103,8 @@
       <p></p>
     </div>
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/2.jpg"/>
-      <h5 class="market__item-tittle"><a href="http://kupivalun.ru/market/valun-1201-db/">Валун-120-1 тёмный базальт</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/2.jpg" onclick="getGalleryModal('gallery-2')"/>
+      <span class="market__item-tittle fw-bold"><a href="http://kupivalun.ru/market/valun-1201-db/">Валун-120-1 тёмный базальт</a></span>
       <hr>
       <span class="small"><a href="http://kupivalun.ru/market/valun-801_wg/">Валун-80-1 белый гранит</a></span>
       <hr>
@@ -112,8 +112,8 @@
       <p></p>
     </div>
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/3.jpg"/>
-      <h5 class="market__item-tittle"><a href="">...</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/3.jpg" onclick="getGalleryModal('gallery-3')"/>
+      <span class="market__item-tittle fw-bold"><a href="">...</a></span>
       <hr>
       <span class="small"><a href="">...</a></span>
       <hr>
@@ -121,8 +121,8 @@
       <p></p>
     </div>
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/4.jpg"/>
-      <h5 class="market__item-tittle"><a href="">...</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/4.jpg" onclick="getGalleryModal('gallery-4')"/>
+      <span class="market__item-tittle fw-bold"><a href="">...</a></span>
       <hr>
       <span class="small"><a href="">...</a></span>
       <hr>
@@ -130,8 +130,8 @@
       <p></p>
     </div>
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/5.jpg"/>
-      <h5 class="market__item-tittle"><a href="">...</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/5.jpg" onclick="getGalleryModal('gallery-5')"/>
+      <span class="market__item-tittle fw-bold"><a href="">...</a></span>
       <hr>
       <span class="small"><a href="">...</a></span>
       <hr>
@@ -139,8 +139,8 @@
       <p></p>
     </div>
     <div class="market__item">
-      <img src="./wa-data/public/site/valunov/img/gallery/6.jpg"/>
-      <h5 class="market__item-tittle"><a href="">...</a></h5>
+      <img class="img__290 gallety_pointer" src="./wa-data/public/site/valunov/img/gallery/24.jpg" onclick="getGalleryModal('gallery-24')"/>
+      <span class="market__item-tittle fw-bold"><a href="">...</a></span>
       <hr>
       <span class="small"><a href="">...</a></span>
       <hr>
@@ -177,7 +177,14 @@
     <!-- top btn -->
     <section id="btn__top-id" class="btn__top visible-none" title="Наверх" onclick="scrollOnTop()"><span class='glyphicon glyphicon-circle-arrow-up btn__top_ico'></span></section>
   </footer>
+  <!-- modal -->
+  <section id="gallery-bg" class="fixed-overlay display-none"></section>
+  <section id="gallery-modal" class="fixed-overlay display-none" style="background: url('http://kupivalun.ru/wa-data/public/site/valunov/img/gallery/large/1.jpg'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+      <div class="gallery__left" onclick="galleryLeft()"></div>
+      <div class="gallery__right" onclick="galleryRight()"></div>
+      <span class='glyphicon glyphicon glyphicon-remove-sign gallery__icon-del' title='Закрыть' onclick="closeGalleryBtn()"></span>
+  </section>
 </body>
   <script type="text/javascript" src="js/common.js"></script>
-
+  <script type="text/javascript" src="js/gallery.js"></script>
 </html>
